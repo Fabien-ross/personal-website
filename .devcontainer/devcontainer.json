@@ -1,0 +1,10 @@
+// Reference at 
+// https://containers.dev/implementors/json_reference/
+
+{
+  "name": "dev_container_humble_frontend",
+  "dockerComposeFile": "../compose.yml",
+  "service": "client", // service that runs the app
+  "workspaceFolder": "/app", //path inside the container
+  "forwardPorts": [5173] //An array of port numbers or "host:port" values
+}

@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+body {
+  color: #1a1a1a;
+  background-color: white;
+}
+
+html, body {
+  overflow-x: clip;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+}

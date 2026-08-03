@@ -1,0 +1,18 @@
+# Django
+Django==6.0.2
+djangorestframework==3.14.0
+django-allauth==65.14.3
+django-cors-headers==4.9.0
+
+# Requests
+requests==2.31.0
+
+# Database
+psycopg[binary]==3.1.12
+sqlparse==0.5.5
+
+# Environnement
+python-dotenv==1.0.1
+
+# Plots / Data
+pandas==2.2.2

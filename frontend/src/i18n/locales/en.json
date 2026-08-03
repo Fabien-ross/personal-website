@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "home": "Home",
+    "essays": "Essays",
+    "novels": "Novels",
+    "poems": "Poems",
+    "quotes": "Quotes",
+    "music": "Music",
+    "graphics": "Graphic Arts",
+    "comments": "Comments"
+  },
+
+  "home_presentation": {
+    "quote": {"content": "❝The purpose of art is washing the dust of daily life off our souls.❞",
+              "author": "Pablo Picasso"
+    },
+    "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. Here, you will find a few humble attempts in that spirit.",
+    "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
+  },
+
+  "novels_presentation": {
+    "title": "Novels",
+    "description" : "Description of the novels section."
+  },
+
+  "poems_presentation": {
+    "title": "Poems",
+    "description" : "Description of the poems section."
+  },
+
+  "quotes_presentation": {
+    "title": "Quotes",
+    "description" : "Description of the quotes section."
+  },
+
+  "essays_presentation": {
+    "title": "Essays",
+    "description" : "Description of the essays section."
+  },
+
+  "graphic_presentation": {
+    "title": "Graphic Arts",
+    "description" : "Description of the graphic arts section."
+  },
+
+  "music_presentation": {
+    "title": "Music",
+    "description" : "Description of the music section."
+  },
+
+  "comments_presentation": {
+    "title": "Comments",
+    "description" : "Description of the comments section."
+  },
+
+  "not_found": {
+    "title": "Page Not Found",
+    "description" : "The page you are looking for does not exist."
+  },
+
+  "images_legend": {
+    "st-exup": "Saint-Exupéry somewhere above the clouds, 2026",
+    "denissow": "Denissow contemplating a rainy plain, 2026"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "essays": "Essais",
+    "novels": "Nouvelles",
+    "poems": "Poèmes",
+    "quotes": "Citations",
+    "music": "Musiques",
+    "graphics": "Arts",
+    "comments": "Commentaires"
+  },
+
+  "home_presentation" : {
+    "quote": {"content": "❝Le but de l'art est de laver la poussière de la vie quotidienne de nos âmes.❞",
+              "author": "Pablo Picasso"
+    },
+    "description": "Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens. Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.",
+    "fabien-rosset": "Je suis Fabien ROSSET, étudiant à l'École Centrale de Lyon et Politecnico di Milano."
+  },
+
+  "novels_presentation": {
+    "title": "Nouvelles",
+    "description" : "Description de la section \"Nouvelles\"."
+  },
+
+  "poems_presentation": {
+    "title": "Poèmes",
+    "description" : "Description de la section \"Poèmes\"."
+  },
+
+  "quotes_presentation": {
+    "title": "Citations",
+    "description" : "Description de la section \"Citations\"."
+  },
+
+  "essays_presentation": {
+    "title": "Essais",
+    "description" : "Description de la section \"Essais\"."
+  },
+
+  "graphic_presentation": {
+    "title": "Arts Graphiques",
+    "description" : "Description de la section \"Arts Graphiques\"."
+  },
+
+  "music_presentation": {
+    "title": "Musique",
+    "description" : "Description de la section \"Musique\"."
+  },
+
+  "comments_presentation": {
+    "title": "Commentaires",
+    "description" : "Description de la section \"Commentaires\"."
+  },
+
+  "not_found": {
+    "title": "Page non trouvée",
+    "description" : "La page que vous recherchez n'existe pas."
+  },
+
+  "images_legend": {
+    "st-exup": "Saint-Exupéry quelque part au-dessus des nuages, 2026",
+    "denissow": "Denissow contemplant une plaine pluvieuse, 2026"
+  }
+}

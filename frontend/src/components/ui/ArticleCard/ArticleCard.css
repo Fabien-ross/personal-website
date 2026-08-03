@@ -1,0 +1,10 @@
+.article-card{
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.article-card a {
+  text-decoration: none;
+  color: var(--text-color);
+}
