@@ -2,7 +2,7 @@
 // https://containers.dev/implementors/json_reference/
 
 {
-  "name": "dev_container_humble",
+  "name": "dev_container_afa",
   "dockerComposeFile": "../compose.yml",
   "service": "server", // service that runs the app
   "workspaceFolder": "/project", //path inside the container

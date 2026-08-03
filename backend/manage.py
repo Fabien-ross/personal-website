@@ -18,7 +18,7 @@ def main():
     if len(sys.argv) >= 2 and sys.argv[1] == "runserver":
         if len(sys.argv) == 2:
             print("Default argument used. To change, modify manage.py.")
-            # 0.0.0.0 enables Docker to access your server: use localhost:8000 to manage the server in your browser
+            # 0.0.0.0 enables Docker to access the server: use localhost:8000 to manage the server in the browser
             sys.argv.append("0.0.0.0:8000") 
 
     execute_from_command_line(sys.argv)

@@ -1,6 +1,6 @@
 services:
   server:
-    container_name: humble-server
+    container_name: afa-server
     build:
       # Server Dockefile emplacement
       context: ./backend
@@ -17,11 +17,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    secrets:
-      - db-password
 
   client:
-    container_name: humble-client
+    container_name: afa-client
     build:
       # Frontend Dockefile emplacement
       context: ./frontend
@@ -40,11 +38,9 @@ services:
 
   db:
     image: postgres:18
-    container_name: humble-postgres-db
+    container_name: afa-postgres-db
     restart: always
-    user: postgres
-    secrets:
-      - db-password
+  
     volumes:
       # db-data is on the host but managed by docker
       # /var/lib/postgresql allows the volume to persist
@@ -52,7 +48,7 @@ services:
     environment:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     expose:
       - 5432
     healthcheck:
@@ -66,6 +62,4 @@ volumes:
   node_modules:
 
 # Useful for production (in dev, the global .env is used)
-secrets:
-  db-password:
-    file: "secrets/db_password.txt"
+# secrets:

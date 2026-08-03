@@ -42,7 +42,9 @@ coverage.xml
 cover/
 
 # Environments
-#.env  # To be uncommented
+.env
+backend/.env
+frontend/.env
 .venv
 env/
 venv/
