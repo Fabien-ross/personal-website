@@ -22,11 +22,11 @@ const router = createBrowserRouter([
         element: <NotFound />
       },
       {
-        path: ":category",
+        path: ":type",
         element: <CategoryPage />,
       },
       {
-        path: ":category/:slug",
+        path: ":type/:slug",
         element: <SingleContent />,
         errorElement: <NotFound />,
       }

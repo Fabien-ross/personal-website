@@ -1,14 +1,13 @@
 import ArticleCard from "../ArticleCard/ArticleCard.jsx";
 import "./ArticleList.css";
 
-function ArticleList({ articles, type }) {
+function ArticleList({ articles }) {
   return (
     <div className="articles">
       {articles.map(article => (
         <ArticleCard
-          key={article.id}
           article={article}
-          type={type}
+          key={article.translation.slug}
         />
       ))}
     </div>

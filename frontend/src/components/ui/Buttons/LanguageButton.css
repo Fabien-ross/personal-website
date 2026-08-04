@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 6px;
-  padding-right: 20px;
+  margin-right: 20px;
   border: none;
   background: transparent;
   border-radius: 3px;
@@ -14,7 +13,7 @@
 }
 
 .language-button:hover {
-  background-color: rgba(128, 128, 128, 0.25);
+  transform: scale(1.1);
 }
 
 .language-button .fi {

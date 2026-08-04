@@ -1,16 +1,6 @@
 import stexupImage from "../assets/images/stexup.png";
 import denissowImage from "../assets/images/denissow.png";
 
-import {
-  getPoems,
-  getComments,
-  getEssays,
-  getGraphic,
-  getQuotes,
-  getNovels,
-  getMusic
-} from "../api/contentApi";
-
 
 export const contentConfig = {
 
@@ -21,14 +11,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "essays",
     title: "essays_presentation.title",
     author: "",
     description: "essays_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getEssays,
+    dark: true
   },
 
 
@@ -39,14 +27,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "poems",
     title: "poems_presentation.title",
     author: "",
     description: "poems_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getPoems,
+    dark: true
   },
 
 
@@ -57,14 +43,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "graphic",
     title: "graphic_presentation.title",
     author: "",
     description: "graphic_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getGraphic
+    dark: true
   },
 
 
@@ -75,14 +59,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "quotes",
     title: "quotes_presentation.title",
     author: "",
     description: "quotes_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getQuotes
+    dark: true
   },
 
 
@@ -93,14 +75,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "novels",
     title: "novels_presentation.title",
     author: "",
     description: "novels_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getNovels
+    dark: true
   },
 
 
@@ -111,14 +91,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "music",
     title: "music_presentation.title",
     author: "",
     description: "music_presentation.description",
     footer: false,
     reverse: false,
-    dark: true,
-    getData: getMusic
+    dark: true
   },
 
 
@@ -129,14 +107,12 @@ export const contentConfig = {
       alt1: "stexup",
       alt2: "denissow",
     },
-    type: "comments",
     title: "comments_presentation.title",
     author: "",
     description: "comments_presentation.description",
     footer: false,
     reverse: false,
     dark: true,
-    getData: getComments
   },
 
 };

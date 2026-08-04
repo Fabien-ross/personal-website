@@ -19,7 +19,7 @@ function LanguageLayout() {
   }, [lang, i18n]);
 
   return (
-    <PageThemeProvider>
+    <PageThemeProvider >
       {!hideHeader && <Header />}
       <Outlet />
     </PageThemeProvider>

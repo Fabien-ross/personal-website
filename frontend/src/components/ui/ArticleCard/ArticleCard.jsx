@@ -2,7 +2,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { usePageTheme } from "../../themes/PageThemeContext";
 import "./ArticleCard.css";
 
-function ArticleCard({ article, type }) {
+function ArticleCard({ article }) {
     const { pageTheme } = usePageTheme();
     const { lang } = useParams();
 
@@ -13,10 +13,10 @@ function ArticleCard({ article, type }) {
             "--text-color": pageTheme.dark ? "white" : "#1a1a1a"
             }}
         >
-            <NavLink to={`/${lang}/${type}/${article.slug}`} onClick={() => setIsOpen(false)}>
-                {article.title}
+            <NavLink to={`/${lang}/${article.type}/${article.translation.slug}`} onClick={() => setIsOpen(false)}>
+                {article.translation.title}
             </NavLink>
-            <div>{article.author}</div>
+            <div>{article.published_at}</div>
         </div>
     );
 }

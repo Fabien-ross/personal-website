@@ -1,5 +1,12 @@
 from django.contrib import admin
 
-from .models import Document
+from .models import Document, DocumentTranslation
 
-admin.site.register(Document)
+
+class DocumentTranslationInline(admin.TabularInline):
+    model = DocumentTranslation
+    extra = 1
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    inlines = [DocumentTranslationInline]

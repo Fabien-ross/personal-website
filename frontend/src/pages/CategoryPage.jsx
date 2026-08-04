@@ -4,36 +4,35 @@ import { useTranslation } from "react-i18next";
 
 import GeneralBackground from "../components/layout/GeneralBackground/GeneralBackground";
 import ArticleList from "../components/ui/ArticleList/ArticleList";
+import { getSet } from "../api/contentApi";
 
 import { contentConfig } from "../config/contentConfig";
 import { useRouteError } from "react-router-dom";
 
 export default function CategoryPage() {
 
-  const { category } = useParams();
+  const { lang, type } = useParams();
   const { t } = useTranslation();
   const [items, setItems] = useState([]);
-  const config = contentConfig[category];
+  const config = contentConfig[type];
 
   useEffect(() => {
 
     async function loadData() {
       if (!config) return;
-      const data = await config.getData();
+      const data = await getSet(lang, type);
       setItems(data);
     }
 
     loadData();
 
-  }, [category]);
+  }, [type]);
 
-  console.log("CategoryPage.jsx - items:", items);
-
-  if (!config) {
-    throw new Response("Not Found", {
-      status: 404
-    });
-  }
+  // if (!config) {
+  //   throw new Response("Not Found", {
+  //     status: 404
+  //   });
+  // }
 
   return (
     <main>
@@ -43,7 +42,7 @@ export default function CategoryPage() {
         title={t(config.title)}
         author=""
         description={t(config.description)}
-        other={<ArticleList articles={items} type={config.type} />}
+        other={<ArticleList articles={items} />}
         footer={config.footer}
         reverse={config.reverse}
         dark={config.dark}

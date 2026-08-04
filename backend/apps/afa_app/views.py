@@ -1,12 +1,26 @@
 from .models import Document
-from django.http import JsonResponse
+from rest_framework import viewsets
+from .serializers import DocumentSerializer
 
 
-def test(request):
-    try:
-        latest_document = Document.objects.order_by("-created_at")[0]
-        data = {"message": f"""The migration was successful! Here is the latest document that appears in table 'Document' of DB 'my_postgres_db': '{latest_document.title}' (If you see nothing, the DB must be empty!)"""}
+class DocumentViewSet(viewsets.ModelViewSet):
+    serializer_class = DocumentSerializer
 
-    except:
-        data = {"message": """Server Working! You are seeing this message because you didn't migrate the postgres DB structure! Refer to READ_ME."""}
-    return JsonResponse(data)
+    def get_queryset(self): # get a set of objects
+        language = self.kwargs.get("language")
+        doc_type = self.kwargs.get("type")
+
+        return Document.objects.filter(
+            type=doc_type,
+            translations__language=language,
+        ).distinct()
+
+    def get_object(self): # get one particular object
+        language = self.kwargs["language"]
+        slug = self.kwargs["slug"]
+
+        return Document.objects.get(
+            translations__slug=slug,
+            translations__language=language,
+        )
+    
