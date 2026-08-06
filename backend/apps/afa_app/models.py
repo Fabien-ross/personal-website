@@ -11,7 +11,7 @@ class Document(models.Model):
         COMMENTARY = "commentarys", "Commentarys"
         NOVEL = "novels", "Novels"
         MUSIC = "musics", "Musics"
-        GRAPHIC = "graphics", "Graphics"
+        GRAPHIC = "graphic", "Graphic"
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type = models.CharField(max_length=50, choices=DocumentType.choices)
@@ -38,6 +38,7 @@ class DocumentTranslation(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, editable=False) # the slug is edited only through automatic generation
     content = models.TextField()
+    summary = models.TextField(blank=True, null=True)
     lang_metadata = models.JSONField(default=dict, blank=True)
 
     # Slug generation

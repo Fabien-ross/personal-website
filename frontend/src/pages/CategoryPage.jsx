@@ -43,7 +43,6 @@ export default function CategoryPage() {
         author=""
         description={t(config.description)}
         other={<ArticleList articles={items} />}
-        footer={config.footer}
         reverse={config.reverse}
         dark={config.dark}
       />

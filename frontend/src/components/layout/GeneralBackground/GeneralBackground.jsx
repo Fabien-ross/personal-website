@@ -1,7 +1,6 @@
 import "./GeneralBackground.css";
 import { useEffect } from "react";
 import { usePageTheme } from "../../themes/PageThemeContext";
-import Footer from "../../ui/Footer/Footer.jsx";
 
 function GeneralBackground({
   image,
@@ -10,7 +9,6 @@ function GeneralBackground({
   author,
   description,
   other,
-  footer = false,
   reverse = false,
   dark = false,
 }) {
@@ -43,11 +41,21 @@ function GeneralBackground({
         <div className="col-text-content">
           <p className="title">{title}</p>
           <p className="author">{author}</p>
-          <p className="description">{description}</p>
+          <div className="description">
+            {description.split(/\r\n\r\n/).map((stanza, i) => (
+              <p className="stanza" key={i}>
+                {stanza.split(/\r\n/).map((line, j) => (
+                  <span key={j}>
+                    {line.trim()}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            ))}
+          </div>
           {other && <div className="other">{other}</div>}
         </div>
       </section>
-      {footer && <Footer className="footer" />}
     </section>
     
   );

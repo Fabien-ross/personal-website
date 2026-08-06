@@ -22,7 +22,6 @@ export default function Home() {
         author={t("home_presentation.quote.author")}
         description={t("home_presentation.description")}
         other=""
-        footer=""
         dark
       />
     </main>

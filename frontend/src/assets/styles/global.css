@@ -7,13 +7,13 @@ body {
   font-family: sans-serif;
 }
 
-body {
-  color: #1a1a1a;
-  background-color: white;
-}
-
 html, body {
   overflow-x: clip;
+}
+
+body {
+  background: var(--app-background, white);
+  color: #1a1a1a;
 }
 
 #root {

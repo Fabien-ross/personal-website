@@ -16,7 +16,11 @@ function ArticleCard({ article }) {
             <NavLink to={`/${lang}/${article.type}/${article.translation.slug}`} onClick={() => setIsOpen(false)}>
                 {article.translation.title}
             </NavLink>
-            <div>{article.published_at}</div>
+            {article.translation.summary && (
+            <div>
+                {article.translation.summary}
+            </div>
+            )}
         </div>
     );
 }

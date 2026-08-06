@@ -6,7 +6,7 @@
     "poems": "Poems",
     "quotes": "Quotes",
     "music": "Music",
-    "graphics": "Graphic Arts",
+    "graphic": "Illustrations",
     "comments": "Comments"
   },
 
@@ -14,48 +14,43 @@
     "quote": {"content": "❝The purpose of art is washing the dust of daily life off our souls.❞",
               "author": "Pablo Picasso"
     },
-    "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. Here, you will find a few humble attempts in that spirit.",
+    "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. \r\n\r\nHere, you will find a few humble attempts in that spirit.",
     "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
   },
 
   "novels_presentation": {
     "title": "Novels",
-    "description" : "Description of the novels section."
+    "description": "Stories are surely one of the best ways to express the inexpressible by building new worlds, at the edge of reality. \r\n\r\nDive into one of them!"
   },
 
   "poems_presentation": {
     "title": "Poems",
-    "description" : "Description of the poems section."
+    "description": "When I was a kid, I could not understand the point of poetry: a few rhymes and strange stories, somewhat artificial. \r\n\r\nBut soon I grew up and learned that so much can be said with so few words..."
   },
 
   "quotes_presentation": {
     "title": "Quotes",
-    "description" : "Description of the quotes section."
+    "description": "Sometimes we come across people whose few words can shape an entire life. \r\n\r\nExplore here some cultural references, as well as others that are more personal :"
   },
 
   "essays_presentation": {
     "title": "Essays",
-    "description" : "Description of the essays section."
+    "description": "By listening carefully enough and for long enough, we can eventually hear the voice of our reason. What better way than to try to transcribe what it tells us! \r\n\r\nHere are some reflections on various facets of the world :"
   },
 
   "graphic_presentation": {
-    "title": "Graphic Arts",
-    "description" : "Description of the graphic arts section."
+    "title": "Illustrations",
+    "description": "The eye remains the one among our senses whose absence takes away the most charm from life. \r\n\r\nI do not claim to be an artist, but I wanted to gather here the illustrations of this website, along with a description of the ideas behind their composition :"
   },
 
   "music_presentation": {
     "title": "Music",
-    "description" : "Description of the music section."
+    "description": "Who could claim to have never enjoyed being carried away by the rhythm of music? \r\n\r\nFind here some of my compositions :"
   },
 
   "comments_presentation": {
     "title": "Comments",
-    "description" : "Description of the comments section."
-  },
-
-  "not_found": {
-    "title": "Page Not Found",
-    "description" : "The page you are looking for does not exist."
+    "description": "Sometimes we encounter magnificent authors whose explanations, whether transparent or obscure, deserve to be read again. \r\n\r\nHere are some notes and comments about works whose names may be familiar to you :"
   },
 
   "images_legend": {

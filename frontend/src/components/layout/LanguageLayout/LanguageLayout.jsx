@@ -1,5 +1,5 @@
-import Header from "../components/ui/Header/Header.jsx";
-import PageThemeProvider from "../components/themes/PageThemeContext.jsx";
+import Header from "../../ui/Header/Header.jsx";
+import PageThemeProvider from "../../themes/PageThemeContext.jsx";
 import { useEffect } from "react";
 import { useParams, Outlet, useMatches } from "react-router-dom";
 import { useTranslation } from "react-i18next";

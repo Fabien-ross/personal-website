@@ -6,7 +6,7 @@
     "poems": "Poèmes",
     "quotes": "Citations",
     "music": "Musiques",
-    "graphics": "Arts",
+    "graphic": "Illustrations",
     "comments": "Commentaires"
   },
 
@@ -14,43 +14,43 @@
     "quote": {"content": "❝Le but de l'art est de laver la poussière de la vie quotidienne de nos âmes.❞",
               "author": "Pablo Picasso"
     },
-    "description": "Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens. Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. Trouvez ici quelques tentatives en ce sens.",
+    "description": "Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élants de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. \r\n\r\nTrouvez ici quelques tentatives en ce sens.",
     "fabien-rosset": "Je suis Fabien ROSSET, étudiant à l'École Centrale de Lyon et Politecnico di Milano."
   },
 
   "novels_presentation": {
     "title": "Nouvelles",
-    "description" : "Description de la section \"Nouvelles\"."
+    "description" : "Les histoires sont sûrement le meilleur moyen d'exprimer l'inexprimable en construisant de nouveaux mondes, à la lisière du réel. \r\n\r\nPlongez dans l'un d'eux!"
   },
 
   "poems_presentation": {
     "title": "Poèmes",
-    "description" : "Description de la section \"Poèmes\"."
+    "description" : "Quand j'étais petit, je ne comprenais pas l'intérêt de la poésie: quelques rimes et des histoires étranges, un peu artificielles. \r\n\r\nMais bientôt j'ai grandi et appris que l'on peut en dire tant avec si peu de mots..."
   },
 
   "quotes_presentation": {
     "title": "Citations",
-    "description" : "Description de la section \"Citations\"."
+    "description" : "Il arrive que l'on croise la route de l'une de ces personnes dont quelques mots peuvent orienter une vie toute entière. \r\n\r\nNaviguez ici dans quelques références culturelles et d'autres, plus personnelles :"
   },
 
   "essays_presentation": {
     "title": "Essais",
-    "description" : "Description de la section \"Essais\"."
+    "description" : "En écoutant assez attentivement et assez longtemps, on parvient à entendre la voix de notre raison. Quoi de mieux que d'essayer de retranscrire ce qu'elle nous raconte! \r\n\r\nVoici donc quelques réflexions sur diverses facettes du monde :"
   },
 
   "graphic_presentation": {
-    "title": "Arts Graphiques",
-    "description" : "Description de la section \"Arts Graphiques\"."
+    "title": "Illustrations",
+    "description" : "L'oeil reste celui de nos sens dont l'absence retire le plus de charme à la vie. \r\n\r\nJe ne me prétend pas dessinateur, mais je souhaitais répertorier ici les illustrations de ce site accompagnées d'une description des idées derrière leur composition :"
   },
 
   "music_presentation": {
     "title": "Musique",
-    "description" : "Description de la section \"Musique\"."
+    "description" : "Qui prétendrait n'avoir jamais aimé vibrer au rythme de la musique? \r\n\r\nRetrouvez-ici quelques unes de mes compositions :"
   },
 
   "comments_presentation": {
     "title": "Commentaires",
-    "description" : "Description de la section \"Commentaires\"."
+    "description" : "On rencontre parfois de magnifiques auteurs dont les explications, qu'elles soient diaphanes ou opaques, méritent une relecture. \r\n\r\nVoici quelques notes et commentaires à propos d'ouvrages dont les noms vous seront peut-être familiers :"
   },
 
   "not_found": {

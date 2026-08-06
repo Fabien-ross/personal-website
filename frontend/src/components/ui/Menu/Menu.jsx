@@ -41,7 +41,7 @@ export default function Menu() {
         </NavLink>
 
         <NavLink to={`/${lang}/graphic`} onClick={() => setIsOpen(false)}>
-          {t("navbar.graphics")}
+          {t("navbar.graphic")}
         </NavLink>
 
         <NavLink to={`/${lang}/comments`} onClick={() => setIsOpen(false)}>

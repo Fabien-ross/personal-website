@@ -28,9 +28,13 @@ class DocumentSerializer(serializers.ModelSerializer):
     def get_translation(self, obj): # the name of the function is important: gets the 'translation' field for
         lang = self.context["view"].kwargs["language"] # context object (contains, view, request, etc.)
 
-        return DocumentTranslationSerializer( # the content of the translation field
-            obj.translations.get(language=lang)
-        ).data
+        translation = (
+            obj.translations.filter(language=lang).first()
+            or obj.translations.filter(language="fr").first()
+        )
+
+        return DocumentTranslationSerializer(translation).data
+
 
     def get_metadata(self, obj):
         metadata = (obj.metadata or {}).copy()

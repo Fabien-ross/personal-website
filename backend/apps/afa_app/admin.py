@@ -10,3 +10,20 @@ class DocumentTranslationInline(admin.TabularInline):
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
     inlines = [DocumentTranslationInline]
+
+    list_display = (
+        "display_title",
+        "type",
+    )
+
+    search_fields = (
+        "translations__title",
+        "type",
+    )
+
+    def display_title(self, obj):
+        translation = obj.translations.filter(language="fr").first()
+        return translation.title if translation else "(sans titre)"
+
+    display_title.short_description = "Title"
+

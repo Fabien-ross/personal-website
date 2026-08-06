@@ -1,4 +1,5 @@
 from django.urls import include, path
+from django.contrib import admin
 from rest_framework import routers
 
 from . import views
@@ -6,6 +7,7 @@ from . import views
 router = routers.DefaultRouter()
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path(
         "<str:language>/<str:type>/",
         views.DocumentViewSet.as_view({"get": "list"}),

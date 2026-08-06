@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const PageThemeContext = createContext();
 
@@ -8,6 +8,20 @@ export default function PageThemeProvider({ children }) {
     dark: false,
     reverse: false,
   });
+
+  useEffect(() => {
+    const { dark } = pageTheme;
+
+    document.documentElement.style.setProperty(
+      "--app-background",
+      dark ? "#1a1a1a" : "white"
+    );
+
+    document.body.style.color = dark
+      ? "white"
+      : "#1a1a1a";
+
+  }, [pageTheme]);
 
   return (
     <PageThemeContext.Provider

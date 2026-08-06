@@ -14,7 +14,6 @@ export const contentConfig = {
     title: "essays_presentation.title",
     author: "",
     description: "essays_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -30,7 +29,6 @@ export const contentConfig = {
     title: "poems_presentation.title",
     author: "",
     description: "poems_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -46,7 +44,6 @@ export const contentConfig = {
     title: "graphic_presentation.title",
     author: "",
     description: "graphic_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -62,7 +59,6 @@ export const contentConfig = {
     title: "quotes_presentation.title",
     author: "",
     description: "quotes_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -78,7 +74,6 @@ export const contentConfig = {
     title: "novels_presentation.title",
     author: "",
     description: "novels_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -94,7 +89,6 @@ export const contentConfig = {
     title: "music_presentation.title",
     author: "",
     description: "music_presentation.description",
-    footer: false,
     reverse: false,
     dark: true
   },
@@ -110,7 +104,6 @@ export const contentConfig = {
     title: "comments_presentation.title",
     author: "",
     description: "comments_presentation.description",
-    footer: false,
     reverse: false,
     dark: true,
   },

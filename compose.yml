@@ -27,7 +27,7 @@ services:
       # bind mount enabling modifications on the host 
       # (app is not the same as for the server) since it is a different container
       - ./frontend:/app
-      - node_modules:/app/node_modules # to save in container modifications
+      - /app/node_modules # to save in container modifications
     ports:
       - "5173:5173"
     environment:

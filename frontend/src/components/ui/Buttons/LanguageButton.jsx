@@ -35,9 +35,13 @@ function LanguageButton() {
   };
 
   return (
-    <button className="language-button" onClick={switchLanguage}>
-      <span className={`fi ${lang === "fr" ? "fi-gb" : "fi-fr"}`} />
-    </button>
+    <>
+     {!slug && !alternateSlug && (
+      < button className="language-button" onClick={switchLanguage}>
+        <span className={`fi ${lang === "fr" ? "fi-gb" : "fi-fr"}`} />
+      </button>
+    )}
+    </>
   );
 }
 

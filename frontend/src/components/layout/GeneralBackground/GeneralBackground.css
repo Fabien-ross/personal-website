@@ -124,16 +124,14 @@ img.stexup {
     color: var(--text-color);} 
 
 .description { 
-    margin: 0 0 1.5rem; 
+    margin-top:-20px;
     font-family: "Lora", serif; 
     font-size: 1.30rem; 
     font-weight: 400; 
-    line-height: 1.8; 
+    line-height: 1.4; 
     letter-spacing: 0.01em; 
     color: var(--text-color);
-
-    white-space: pre-line;
-  } 
+  }
 
 .other { 
  
@@ -142,23 +140,3 @@ img.stexup {
     font-style: italic; 
     line-height: 1.6; 
     color: var(--text-color);}
-
-/* FOOTER */
-
-.footer {
-    border-top: 1px solid var(--text-color);
-    padding-top: 10px;
-    padding-bottom: 1px;
-    background-color: var(--background-color);
-    grid-column: 1 / -1;
-}
-
-.footer .description {
-    padding-left: 20px;
-    padding-right: 20px;
-    color: var(--text-color);
-    left: var(--one-reverse);
-    right: var(--zero-reverse);
-    font-size: 14px;
-    color: var(--text-color);
-}

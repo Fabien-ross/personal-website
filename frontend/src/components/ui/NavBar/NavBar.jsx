@@ -33,7 +33,7 @@ function Navbar() {
       </NavLink>
 
       <NavLink to={`/${lang}/graphic`}>
-        {t("navbar.graphics")}
+        {t("navbar.graphic")}
       </NavLink>
 
       <NavLink to={`/${lang}/comments`}>

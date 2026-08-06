@@ -43,9 +43,7 @@ export default function SingleContent() {
       image={config.image.src2}
         alt={config.image.alt2} 
       title={item.translation.title}
-      author={item.published_at}
       description={item.translation.content}
-      footer
       reverse
     />
   );

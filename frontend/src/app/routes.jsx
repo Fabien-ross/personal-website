@@ -1,17 +1,21 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import LanguageLayout from "../i18n/LanguageLayout";
+import LanguageLayout from "../components/layout/LanguageLayout/LanguageLayout";
 import {
   CategoryPage,
   SingleContent,
   NotFound,
   Home
 } from "../pages";
-
+import PageTransition from "../components/layout/PageTransition/PageTransition";
 
 const router = createBrowserRouter([
   {
     path: "/:lang",
-    element: <LanguageLayout />,
+    element: (
+      <PageTransition>
+        <LanguageLayout />
+      </PageTransition>
+      ),
     children: [
       {
         index: true,

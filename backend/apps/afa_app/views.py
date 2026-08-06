@@ -7,20 +7,18 @@ class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
 
     def get_queryset(self): # get a set of objects
-        language = self.kwargs.get("language")
+        language = self.kwargs.get("language") # needed for the serializer
         doc_type = self.kwargs.get("type")
 
         return Document.objects.filter(
             type=doc_type,
-            translations__language=language,
         ).distinct()
 
-    def get_object(self): # get one particular object
-        language = self.kwargs["language"]
+    def get_object(self): # get one specific item
+        language = self.kwargs["language"] # needed for the serializer
         slug = self.kwargs["slug"]
 
         return Document.objects.get(
-            translations__slug=slug,
-            translations__language=language,
+            translations__slug=slug
         )
     
