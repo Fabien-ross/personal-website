@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import GeneralBackground from "../components/layout/GeneralBackground/GeneralBackground";
 import ArticleList from "../components/ui/ArticleList/ArticleList";
-import { getSet } from "../api/contentApi";
+import { getSet as getItemSet } from "../api/contentApi";
 
 import { contentConfig } from "../config/contentConfig";
 import { useRouteError } from "react-router-dom";
@@ -20,7 +20,7 @@ export default function CategoryPage() {
 
     async function loadData() {
       if (!config) return;
-      const data = await getSet(lang, type);
+      const data = await getItemSet(lang, type);
       setItems(data);
     }
 
@@ -40,7 +40,6 @@ export default function CategoryPage() {
         image={config.image.src1}
         alt={config.image.alt1} 
         title={t(config.title)}
-        author=""
         description={t(config.description)}
         other={<ArticleList articles={items} />}
         reverse={config.reverse}

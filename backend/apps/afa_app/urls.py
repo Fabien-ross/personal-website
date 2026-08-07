@@ -9,11 +9,11 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path("admin/", admin.site.urls),
     path(
-        "<str:language>/<str:type>/",
+        "api/docs/<str:language>/<str:type>/",
         views.DocumentViewSet.as_view({"get": "list"}),
     ),
     path(
-        "<str:language>/<str:type>/<str:slug>/",
+        "api/docs/<str:language>/<str:type>/<str:slug>/",
         views.DocumentViewSet.as_view({"get": "retrieve"}),
     ),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),

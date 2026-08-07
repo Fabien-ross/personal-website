@@ -4,7 +4,8 @@ import {
   CategoryPage,
   SingleContent,
   NotFound,
-  Home
+  Home,
+  About
 } from "../pages";
 import PageTransition from "../components/layout/PageTransition/PageTransition";
 
@@ -22,15 +23,19 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "about",
+        element: <About />,
+      },
+      {
         path: "*",
         element: <NotFound />
       },
       {
-        path: ":type",
+        path: "docs/:type",
         element: <CategoryPage />,
       },
       {
-        path: ":type/:slug",
+        path: "docs/:type/:slug",
         element: <SingleContent />,
         errorElement: <NotFound />,
       }

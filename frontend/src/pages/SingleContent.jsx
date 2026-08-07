@@ -3,7 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 
 import { usePageTheme } from "../components/themes/PageThemeContext";
 import GeneralBackground from "../components/layout/GeneralBackground/GeneralBackground";
-import { getObject } from "../api/contentApi";
+import { getObject as getItem } from "../api/contentApi";
 
 
 import { contentConfig } from "../config/contentConfig";
@@ -20,7 +20,7 @@ export default function SingleContent() {
 
     async function loadItem() {
       if (!config) return;
-      const data = await getObject(lang, type, slug);
+      const data = await getItem(lang, type, slug);
       setItem(data);
     }
 

@@ -1,0 +1,20 @@
+
+.col-image img {
+  position: absolute;
+  left: var(--zero-reverse);
+  right: var(--one-reverse);
+  bottom: var(--zero-reverse);
+  top: var(--one-reverse);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: 3;
+}
+
+img.denissow {
+  width: 620px;
+}
+
+img.stexup {
+  width: 525px;
+}

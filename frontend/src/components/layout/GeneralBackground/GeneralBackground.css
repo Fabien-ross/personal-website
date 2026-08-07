@@ -1,7 +1,7 @@
 .general-background {
   display: grid;
   overflow: hidden;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px); /* we remove 60px from the header*/
   grid-template-columns: minmax(0, 1fr) clamp(500px, 68vw, 5000px);
   grid-template-rows: auto 1fr;
   background: var(--background-color);
@@ -28,32 +28,12 @@
   z-index: 1;
 }
 
-.col-image img {
-  position: absolute;
-  left: var(--zero-reverse);
-  right: var(--one-reverse);
-  bottom: var(--zero-reverse);
-  top: var(--one-reverse);
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  z-index: 3;
-}
-
 @media (max-width: 700px) {
 
   .col-image {
     opacity: 0;
   }
 
-}
-
-img.denissow {
-  width: 620px;
-}
-
-img.stexup {
-  width: 525px;
 }
 
 
@@ -82,61 +62,3 @@ img.stexup {
     transparent
   );
 }
-
-.col-text-content {
-  padding-top: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 80px;
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-
-  background:transparent;
-  overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;
-}
-
-.col-text-content::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-/* TYPOGRAPHY */ 
-.title { 
-    margin: 0 0 0.6rem; 
-    font-family: "Cormorant Garamond", serif; 
-    font-size: 4rem; 
-    font-weight: 600; 
-    letter-spacing: 0.03em; 
-    line-height: 1; 
-    color: var(--text-color); } 
-
-.author { 
-    margin: 0 0 2rem; 
-    font-family: "Cormorant Garamond", serif; 
-    font-size: 2.2rem; 
-    font-style: italic; 
-    font-weight: 400; 
-    letter-spacing: 0.02em; 
-    color: var(--text-color);} 
-
-.description { 
-    margin-top:-20px;
-    font-family: "Lora", serif; 
-    font-size: 1.30rem; 
-    font-weight: 400; 
-    line-height: 1.4; 
-    letter-spacing: 0.01em; 
-    color: var(--text-color);
-  }
-
-.other { 
- 
-    font-family: "Lora", serif; 
-    font-size: 1rem; 
-    font-style: italic; 
-    line-height: 1.6; 
-    color: var(--text-color);}

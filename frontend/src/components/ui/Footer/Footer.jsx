@@ -18,7 +18,7 @@ function Footer(){
             }}
         >
             <div className="description">
-                {t("home_presentation.fabien-rosset")}
+                {"footer"}
             </div>
             
         </footer>

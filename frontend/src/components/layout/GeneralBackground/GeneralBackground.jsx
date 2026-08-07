@@ -2,6 +2,9 @@ import "./GeneralBackground.css";
 import { useEffect } from "react";
 import { usePageTheme } from "../../themes/PageThemeContext";
 
+import ImageColumn from "../../ui/ImageColumn/ImageColumn";
+import TextColumn from "../../ui/TextColumn/TextColumn";
+
 function GeneralBackground({
   image,
   alt,
@@ -33,29 +36,8 @@ function GeneralBackground({
         "--one-reverse": reverse ? 0 : "auto",
       }}
     >
-      <section className="col-image">
-        <img className={alt} src={image} alt={alt} />
-      </section>
-
-      <section className="col-text">
-        <div className="col-text-content">
-          <p className="title">{title}</p>
-          <p className="author">{author}</p>
-          <div className="description">
-            {description.split(/\r\n\r\n/).map((stanza, i) => (
-              <p className="stanza" key={i}>
-                {stanza.split(/\r\n/).map((line, j) => (
-                  <span key={j}>
-                    {line.trim()}
-                    <br />
-                  </span>
-                ))}
-              </p>
-            ))}
-          </div>
-          {other && <div className="other">{other}</div>}
-        </div>
-      </section>
+      <ImageColumn className="col-image" alt={alt} image={image}/>
+      <TextColumn className="col-text" title={title} author={author} description={description} other={other} />
     </section>
     
   );

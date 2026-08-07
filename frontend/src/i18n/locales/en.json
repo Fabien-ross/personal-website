@@ -7,7 +7,8 @@
     "quotes": "Quotes",
     "music": "Music",
     "graphic": "Illustrations",
-    "comments": "Comments"
+    "comments": "Comments",
+    "about": "About"
   },
 
   "home_presentation": {
@@ -17,6 +18,13 @@
     "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. \r\n\r\nHere, you will find a few humble attempts in that spirit.",
     "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
   },
+
+  "about": {
+    "title": "About",
+    "description": "This website was built by me using the Vite (with React) and Django (with Python) frameworks. If you would like to report a bug or for any other reason, feel free to send me a message:",
+    "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
+  },
+
 
   "novels_presentation": {
     "title": "Novels",

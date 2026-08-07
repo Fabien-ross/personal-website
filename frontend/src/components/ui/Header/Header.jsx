@@ -1,5 +1,5 @@
 import Navbar from "../NavBar/NavBar.jsx";
-import Menu from "../Menu/Menu.jsx";
+import SideMenu from "../SideMenu/SideMenu.jsx";
 import LanguageButton from "../Buttons/LanguageButton.jsx";
 import { usePageTheme } from "../../themes/PageThemeContext";
 import "./Header.css"
@@ -19,7 +19,7 @@ function Header(){
             </div>
 
             <div className="header-left-small">
-                <Menu />
+                <SideMenu />
             </div>
 
             <div className="header-right">
