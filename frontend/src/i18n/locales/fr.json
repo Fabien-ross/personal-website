@@ -20,13 +20,25 @@
 
   "about": {
     "title" : "À propos",
-    "description": "Ce site a été construit par mes soins à l'aide des frameworks Vite (avec React) et Django (avec Python). Si vous souhaitez me signaler un bug ou pour toute autre raison, n'hésitez pas à m'envoyer un message :",
-    "fabien-rosset": "Je suis Fabien ROSSET, étudiant à l'École Centrale de Lyon et Politecnico di Milano."
+    "description": "Salut ! Je m'appelle Fabien et je suis étudiant à Centrale Lyon et Politecnico di Milano ! Je suis passionné par les sciences, l'informatique mais aussi l'art et la littérature ! \r\n\r\nJ'ai construit l'intégralité de ce site à l'aide des frameworks Vite (avec React) pour le frontend et Django (avec Python) pour le backend ainsi que pour la gestion de ma base de données PostgreSQL. Retrouvez le projet [ici](https://github.com/Fabien-ross/personal-website)! \r\n\r\nSi vous rencontrez un bug ou pour toute autre raison, n'hésitez pas à m'envoyer un message !",
+    "form" : {
+      "email": {
+        "instruction": "Adresse mail",
+        "placeholder" :  "votre@email.com",
+        "error" : "Format de l'addresse email incorrect !"
+      },
+      "message": {
+        "instruction": "Message",
+        "placeholder" : "Votre message..."
+      },
+      "send": "Envoyer",
+      "error": "Veuillez remplir ce champ."
+    }
   },
 
   "novels_presentation": {
     "title": "Nouvelles",
-    "description" : "Les histoires sont sûrement le meilleur moyen d'exprimer l'inexprimable en construisant de nouveaux mondes, à la lisière du réel. \r\n\r\nPlongez dans l'un d'eux!"
+    "description" : "Les histoires sont sûrement le meilleur moyen d'exprimer l'inexprimable en construisant de nouveaux mondes, à la lisière du réel. \r\n\r\nPlongez dans l'un d'eux !"
   },
 
   "poems_presentation": {
@@ -41,7 +53,7 @@
 
   "essays_presentation": {
     "title": "Essais",
-    "description" : "En écoutant assez attentivement et assez longtemps, on parvient à entendre la voix de notre raison. Quoi de mieux que d'essayer de retranscrire ce qu'elle nous raconte! \r\n\r\nVoici donc quelques réflexions sur diverses facettes du monde :"
+    "description" : "En écoutant assez attentivement et assez longtemps, on parvient à entendre la voix de notre raison. Quoi de mieux que d'essayer de retranscrire ce qu'elle nous raconte ! \r\n\r\nVoici donc quelques réflexions sur diverses facettes du monde :"
   },
 
   "graphic_presentation": {
@@ -62,10 +74,5 @@
   "not_found": {
     "title": "Page non trouvée",
     "description" : "La page que vous recherchez n'existe pas."
-  },
-
-  "images_legend": {
-    "st-exup": "Saint-Exupéry quelque part au-dessus des nuages, 2026",
-    "denissow": "Denissow contemplant une plaine pluvieuse, 2026"
   }
 }

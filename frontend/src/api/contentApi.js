@@ -1,22 +1,22 @@
-const API_URL = import.meta.env.VITE_SERVER_API_URL;
+import { API_ROUTES } from "../app/routes"
 
-export const getSet = async (lang, type) => {
+export const getItemSet = async (lang, type) => {
 
-  const response = await fetch(`${API_URL}/api/docs/${lang}/${type}/`);
+  const response = await fetch(API_ROUTES.type_route(lang, type));
 
   if (!response.ok) {
     throw new Error(`Impossible to charge ${type}`);
   }
   const data = await response.json();
 
-  console.log("data", data)
+  //console.log("data", data)
 
   return data.results;
 };
 
-export const getObject = async (lang, type, slug) => {
+export const getItem = async (lang, type, slug) => {
 
-  const response = await fetch(`${API_URL}/api/docs/${lang}/${type}/${slug}/`);
+  const response = await fetch(API_ROUTES.item_route(lang, type, slug));
 
   if (!response.ok) {
     throw new Error(`Impossible to charge ${type}/${slug}`);
@@ -26,4 +26,27 @@ export const getObject = async (lang, type, slug) => {
   console.log("data", data)
 
   return data;
+};
+
+export const sendForm = async (email, message) => {
+
+  const response = await fetch(`${API_URL}/api/contact/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+      message: message,
+    }),
+  });
+
+  const data = await response.json();
+
+  console.log('status', response.status);
+  console.log('data',data);
+
+  if (!response.ok) {
+    throw new Error("Error sending message.");
+  }
 };

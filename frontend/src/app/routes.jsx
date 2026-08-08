@@ -38,6 +38,9 @@ const router = createBrowserRouter([
         path: "docs/:type/:slug",
         element: <SingleContent />,
         errorElement: <NotFound />,
+        handle: {
+          crossHeader: true,
+        },
       }
     ]
   },

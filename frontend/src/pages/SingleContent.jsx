@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
 import { usePageTheme } from "../components/themes/PageThemeContext";
-import GeneralBackground from "../components/layout/GeneralBackground/GeneralBackground";
-import { getObject as getItem } from "../api/contentApi";
+import TwoColumnsLayout from "../components/layout/TwoColumnsLayout/TwoColumnsLayout";
+import OneColumnLayout from "../components/layout/OneColumnLayout/OneColumnLayout";
+
+import { getItem  } from "../api/contentApi";
 
 
 import { contentConfig } from "../config/contentConfig";
@@ -29,8 +31,8 @@ export default function SingleContent() {
   }, [type, slug]);
 
   useEffect(() => {
-    if (item?.metadata?.alternateSlug) {
-      setAlternateSlug(item.metadata.alternateSlug);
+    if (item?.translation?.lang_metadata?.alternateSlug) {
+      setAlternateSlug(item.translation.lang_metadata.alternateSlug);
     }
   }, [item, setAlternateSlug]);
 
@@ -38,13 +40,24 @@ export default function SingleContent() {
     return null;
   }
 
-  return (
-    <GeneralBackground
-      image={config.image.src2}
-        alt={config.image.alt2} 
-      title={item.translation.title}
-      description={item.translation.content}
-      reverse
-    />
-  );
+  if (type == "graphic"){
+    return (
+      <OneColumnLayout
+        image_path={item.media}
+        title={item.translation.title}
+        description={item.translation.content}
+        item={item}
+        dark
+      />
+    );
+  } else {
+    return (
+      <TwoColumnsLayout
+        image_path={item.media}
+        title={item.translation.title}
+        description={item.translation.content}
+        reverse
+      />
+    );
+  }
 }

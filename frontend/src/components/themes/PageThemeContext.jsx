@@ -29,7 +29,7 @@ export default function PageThemeProvider({ children }) {
         pageTheme,
         setPageTheme,
         alternateSlug,
-        setAlternateSlug,
+        setAlternateSlug
       }}
     >
       {children}

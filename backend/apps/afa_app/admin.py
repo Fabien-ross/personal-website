@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Document, DocumentTranslation
+from .models import Document, DocumentTranslation, Contact
 
 
 class DocumentTranslationInline(admin.TabularInline):
@@ -27,3 +27,6 @@ class DocumentAdmin(admin.ModelAdmin):
 
     display_title.short_description = "Title"
 
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    pass

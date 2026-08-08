@@ -16,6 +16,10 @@ class Document(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type = models.CharField(max_length=50, choices=DocumentType.choices)
     published_at = models.DateTimeField(null=True, blank=True)
+    media = models.CharField(
+        max_length=50,
+        blank=True,
+    )
     metadata = models.JSONField(default=dict, blank=True)
 
 
@@ -43,15 +47,15 @@ class DocumentTranslation(models.Model):
 
     # Slug generation
     def generate_unique_slug(self):
-            base = slugify(self.title)
-            slug = base
-            i = 2
-    
-            while DocumentTranslation.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-                slug = f"{base}-{i}"
-                i += 1
-    
-            return slug
+        base = slugify(self.title)
+        slug = base
+        i = 2
+
+        while DocumentTranslation.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+            slug = f"{base}-{i}"
+            i += 1
+
+        return slug
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -71,4 +75,12 @@ class DocumentTranslation(models.Model):
                 name="unique_slug_per_language",
             ),
         ]
-    
+
+class Contact(models.Model):
+
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

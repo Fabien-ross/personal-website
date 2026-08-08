@@ -1,4 +1,4 @@
-.general-background {
+.two-columns-layout {
   display: grid;
   overflow: hidden;
   height: calc(100vh - 60px); /* we remove 60px from the header*/
@@ -7,7 +7,7 @@
   background: var(--background-color);
 }
 
-.general-background-reversed {
+.two-columns-layout-reversed {
   display: grid;
   overflow: hidden;
   height: calc(100vh - 60px); /*100vh means 100% of the viewport height */
@@ -19,7 +19,6 @@
 /* IMAGE */
 
 .col-image {
-  height: 100dvh - 60px;
   position: relative;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
@@ -29,7 +28,6 @@
 }
 
 @media (max-width: 700px) {
-
   .col-image {
     opacity: 0;
   }

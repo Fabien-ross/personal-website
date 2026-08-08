@@ -15,20 +15,31 @@
     "quote": {"content": "❝The purpose of art is washing the dust of daily life off our souls.❞",
               "author": "Pablo Picasso"
     },
-    "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. \r\n\r\nHere, you will find a few humble attempts in that spirit.",
-    "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
+    "description": "In a troubled age — has it ever been otherwise? —, there is a quiet joy to let the impulses of one's heart flow freely, to ease the mind, and to immerse oneself in the fresh currents of the search for beauty. It feels good to shut the door on the surrounding noise and simply listen to the depth of the world. \r\n\r\nHere, you will find a few humble attempts in that spirit."
   },
 
   "about": {
     "title": "About",
-    "description": "This website was built by me using the Vite (with React) and Django (with Python) frameworks. If you would like to report a bug or for any other reason, feel free to send me a message:",
-    "fabien-rosset": "I am Fabien ROSSET, a student at École Centrale de Lyon and Politecnico di Milano."
+    "description": "Hi ! My name is Fabien, and I’m an engineering student at Centrale Lyon and Politecnico di Milano ! I’m passionate about computer science and science in general as well as art and literature ! \r\n\r\nI built this entire website using Vite and React for the frontend, and Django, Python, and PostgreSQL for the backend. Find the github project [here](https://github.com/Fabien-ross/personal-website)! \r\n\r\nIf you encounter a bug or for any other reason, feel free to send me a message !",
+    "form": {
+      "email": {
+        "instruction": "Email address",
+        "placeholder": "your@email.com",
+        "error" : "Incorrect email structure !"
+      },
+      "message": {
+        "instruction": "Message",
+        "placeholder": "Your message..."
+      },
+      "send": "Send",
+      "error": "Please fill out this field."
+    }
   },
 
 
   "novels_presentation": {
     "title": "Novels",
-    "description": "Stories are surely one of the best ways to express the inexpressible by building new worlds, at the edge of reality. \r\n\r\nDive into one of them!"
+    "description": "Stories are surely one of the best ways to express the inexpressible by building new worlds, at the edge of reality. \r\n\r\nDive into one of them !"
   },
 
   "poems_presentation": {
@@ -43,7 +54,7 @@
 
   "essays_presentation": {
     "title": "Essays",
-    "description": "By listening carefully enough and for long enough, we can eventually hear the voice of our reason. What better way than to try to transcribe what it tells us! \r\n\r\nHere are some reflections on various facets of the world :"
+    "description": "By listening carefully enough and for long enough, we can eventually hear the voice of our reason. What better way than to try to transcribe what it tells us ! \r\n\r\nHere are some reflections on various facets of the world :"
   },
 
   "graphic_presentation": {
@@ -61,8 +72,8 @@
     "description": "Sometimes we encounter magnificent authors whose explanations, whether transparent or obscure, deserve to be read again. \r\n\r\nHere are some notes and comments about works whose names may be familiar to you :"
   },
 
-  "images_legend": {
-    "st-exup": "Saint-Exupéry somewhere above the clouds, 2026",
-    "denissow": "Denissow contemplating a rainy plain, 2026"
+  "not_found": {
+    "title": "Not found",
+    "description" : "The page you are looking for doesn't exist."
   }
 }

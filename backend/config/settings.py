@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     "corsheaders", # to manage CORS (to reach React through WEB Browser or Docker)
 ]
 
+# Medias
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",

@@ -1,15 +1,9 @@
-import stexupImage from "../assets/images/stexup.png";
-import denissowImage from "../assets/images/denissow.png";
-
-
 export const contentConfig = {
 
   essays: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "essays_presentation.title",
     author: "",
@@ -21,10 +15,8 @@ export const contentConfig = {
 
   poems: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "poems_presentation.title",
     author: "",
@@ -36,10 +28,8 @@ export const contentConfig = {
 
   graphic: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "graphic_presentation.title",
     author: "",
@@ -51,10 +41,8 @@ export const contentConfig = {
 
   quotes: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "quotes_presentation.title",
     author: "",
@@ -66,10 +54,8 @@ export const contentConfig = {
 
   novels: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "novels_presentation.title",
     author: "",
@@ -81,10 +67,8 @@ export const contentConfig = {
 
   music: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "music_presentation.title",
     author: "",
@@ -96,10 +80,8 @@ export const contentConfig = {
 
   comments: {
     image: {
-      src1: stexupImage,
-      src2: denissowImage,
-      alt1: "stexup",
-      alt2: "denissow",
+      src1: "st-exupery.png",
+      src2: "denissow.png",
     },
     title: "comments_presentation.title",
     author: "",

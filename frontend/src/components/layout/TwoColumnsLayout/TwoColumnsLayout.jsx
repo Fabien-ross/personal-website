@@ -1,13 +1,14 @@
-import "./GeneralBackground.css";
+import "./TwoColumnsLayout.css";
 import { useEffect } from "react";
 import { usePageTheme } from "../../themes/PageThemeContext";
+
+import { API_ROUTES } from "../../../app/routes";
 
 import ImageColumn from "../../ui/ImageColumn/ImageColumn";
 import TextColumn from "../../ui/TextColumn/TextColumn";
 
-function GeneralBackground({
-  image,
-  alt,
+export default function TwoColumnsLayout({
+  image_path,
   title,
   author,
   description,
@@ -26,7 +27,7 @@ function GeneralBackground({
 
   return (
     <section
-      className={`general-background${reverse ? "-reversed" : ""}`}
+      className={`two-columns-layout${reverse ? "-reversed" : ""}`}
       style={{
         "--background-color": dark ? "#1a1a1a" : "white",
         "--text-color": dark ? "white" : "#1a1a1a",
@@ -36,11 +37,9 @@ function GeneralBackground({
         "--one-reverse": reverse ? 0 : "auto",
       }}
     >
-      <ImageColumn className="col-image" alt={alt} image={image}/>
-      <TextColumn className="col-text" title={title} author={author} description={description} other={other} />
+      <ImageColumn className="col-image" alt={image_path} image={API_ROUTES.image_route(image_path)}/>
+      <TextColumn className="col-text" title={title} author={author} description={description} children={other} />
     </section>
     
   );
 }
-
-export default GeneralBackground;

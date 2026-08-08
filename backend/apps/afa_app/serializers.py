@@ -1,4 +1,4 @@
-from .models import Document, DocumentTranslation
+from .models import Document, DocumentTranslation, Contact
 from rest_framework import serializers
 
 class DocumentTranslationSerializer(serializers.ModelSerializer):
@@ -13,8 +13,7 @@ class DocumentTranslationSerializer(serializers.ModelSerializer):
 
 class DocumentSerializer(serializers.ModelSerializer):
     translation = serializers.SerializerMethodField()   # define the 'translation' field
-    metadata = serializers.SerializerMethodField()      # used here to add the slug of the other language (for the frontend language switcher)
-
+    
     class Meta:
         model = Document
         fields = [
@@ -22,34 +21,44 @@ class DocumentSerializer(serializers.ModelSerializer):
             "type",
             "published_at",
             "metadata",
+            "media",
             "translation",  # adds the 'translation' field
         ]
 
-    def get_translation(self, obj): # the name of the function is important: gets the 'translation' field for
-        lang = self.context["view"].kwargs["language"] # context object (contains, view, request, etc.)
+    def get_translation(self, obj):
+        lang = self.context["view"].kwargs["language"]
 
         translation = (
             obj.translations.filter(language=lang).first()
-            or obj.translations.filter(language="fr").first()
+            or obj.translations.filter(language="fr").first() #fallback
         )
 
-        return DocumentTranslationSerializer(translation).data
+        if not translation:
+            return None
 
+        data = dict(DocumentTranslationSerializer(translation).data)
 
-    def get_metadata(self, obj):
-        metadata = (obj.metadata or {}).copy()
-
-        lang = self.context["view"].kwargs["language"]
-        alternate_language = "en" if lang == "fr" else "fr"
+        # we put alertnateSlug to None if there is no english translation so that the flag disappears in the frontend
+        alternate_language = "en" if lang == "fr" or (lang=="en" and translation.language == "fr") else "fr" 
 
         alternate_translation = obj.translations.filter(
             language=alternate_language
         ).first()
 
-        metadata["alternateSlug"] = (
+        lang_metadata = dict(translation.lang_metadata or {})
+
+        lang_metadata["alternateSlug"] = (
             alternate_translation.slug
             if alternate_translation
             else None
         )
 
-        return metadata
+        data["lang_metadata"] = lang_metadata
+
+        return data
+
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ["email", "message", "created_at"]

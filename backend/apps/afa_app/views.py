@@ -1,6 +1,6 @@
-from .models import Document
 from rest_framework import viewsets
-from .serializers import DocumentSerializer
+from .models import Document, Contact
+from .serializers import DocumentSerializer, ContactSerializer
 
 
 class DocumentViewSet(viewsets.ModelViewSet):
@@ -21,4 +21,9 @@ class DocumentViewSet(viewsets.ModelViewSet):
         return Document.objects.get(
             translations__slug=slug
         )
+
+
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     

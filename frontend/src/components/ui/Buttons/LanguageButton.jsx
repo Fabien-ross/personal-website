@@ -36,7 +36,7 @@ function LanguageButton() {
 
   return (
     <>
-     {!slug && !alternateSlug && (
+     {!(slug && !alternateSlug) && (
       < button className="language-button" onClick={switchLanguage}>
         <span className={`fi ${lang === "fr" ? "fi-gb" : "fi-fr"}`} />
       </button>

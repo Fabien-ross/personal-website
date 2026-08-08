@@ -1,0 +1,17 @@
+.article-card{
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+
+  transition: background-color 0.2s ease;
+
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.article-card:hover {
+  background-color: var(--hover-background-color) ;
+
+}

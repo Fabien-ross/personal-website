@@ -2,9 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import GeneralBackground from "../components/layout/GeneralBackground/GeneralBackground";
+import TwoColumnsLayout from "../components/layout/TwoColumnsLayout/TwoColumnsLayout";
 import ArticleList from "../components/ui/ArticleList/ArticleList";
-import { getSet as getItemSet } from "../api/contentApi";
+import { getItemSet as getItemSet } from "../api/contentApi";
+
+import {
+  WrittenArticleCard,
+  MusicArticleCard,
+  IllustrationArticleCard,
+} from "../components/ui/CardComponents";
 
 import { contentConfig } from "../config/contentConfig";
 import { useRouteError } from "react-router-dom";
@@ -34,14 +40,20 @@ export default function CategoryPage() {
   //   });
   // }
 
+  const articleCards = {
+    graphic: IllustrationArticleCard,
+    music: MusicArticleCard,
+    };
+
+  const CardComponent = articleCards[type] || WrittenArticleCard;
+
   return (
     <main>
-      <GeneralBackground
-        image={config.image.src1}
-        alt={config.image.alt1} 
+      <TwoColumnsLayout
+        image_path={config.image.src1}
         title={t(config.title)}
         description={t(config.description)}
-        other={<ArticleList articles={items} />}
+        other={<ArticleList CardComponent={CardComponent} articles={items} />}
         reverse={config.reverse}
         dark={config.dark}
       />

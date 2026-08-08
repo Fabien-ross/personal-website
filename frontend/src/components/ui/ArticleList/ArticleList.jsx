@@ -1,14 +1,10 @@
-import ArticleCard from "../ArticleCard/ArticleCard.jsx";
 import "./ArticleList.css";
 
-function ArticleList({ articles }) {
+function ArticleList({ CardComponent, articles }) {
   return (
     <div className="articles">
       {articles.map(article => (
-        <ArticleCard
-          article={article}
-          key={article.translation.slug}
-        />
+        <CardComponent  article={article} key={article.translation.slug} />
       ))}
     </div>
   );

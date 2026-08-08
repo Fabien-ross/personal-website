@@ -7,9 +7,9 @@ import { useTranslation } from "react-i18next";
 function LanguageLayout() {
   const { lang } = useParams(); // Get the language parameter from the URL
   const { i18n } = useTranslation(); // Access the i18n instance from react-i18next
-  const matches = useMatches(); // Get the current route matches to check for the hideHeader property
-  const hideHeader = matches.some(
-    (match) => match.handle?.hideHeader
+  const matches = useMatches(); // Get the current route matches to check for the crossHeader property
+  const crossHeader = matches.some(
+    (match) => match.handle?.crossHeader
   );
 
   useEffect(() => { // Change the language when the lang parameter changes
@@ -20,7 +20,7 @@ function LanguageLayout() {
 
   return (
     <PageThemeProvider >
-      {!hideHeader && <Header />}
+      <Header crossHeader={crossHeader} />
       <Outlet />
     </PageThemeProvider>
   );
