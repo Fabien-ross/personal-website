@@ -2,6 +2,7 @@ import { API_ROUTES } from "../app/routes"
 
 export const getItemSet = async (lang, type) => {
 
+
   const response = await fetch(API_ROUTES.type_route(lang, type));
 
   if (!response.ok) {
@@ -23,7 +24,7 @@ export const getItem = async (lang, type, slug) => {
   }
   const data = await response.json();
 
-  console.log("data", data)
+  //console.log("data", data)
 
   return data;
 };
@@ -42,9 +43,6 @@ export const sendForm = async (email, message) => {
   });
 
   const data = await response.json();
-
-  console.log('status', response.status);
-  console.log('data',data);
 
   if (!response.ok) {
     throw new Error("Error sending message.");

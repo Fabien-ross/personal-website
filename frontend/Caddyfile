@@ -1,0 +1,12 @@
+fabienrosset.com {
+
+    handle /api/* {
+        reverse_proxy server:8000
+    }
+
+    handle {
+        root * /srv
+        try_files {path} /index.html
+        file_server
+    }
+}

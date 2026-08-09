@@ -1,0 +1,66 @@
+services:
+  server:
+    container_name: afa-server
+    build:
+      context: ./backend
+      target: production
+
+    environment:
+      - DEBUG=${DEBUG:-False}
+      - SUPERUSER_USERNAME=${SUPERUSER_USERNAME}
+      - SUPERUSER_EMAIL=${SUPERUSER_EMAIL}
+      - SUPERUSER_PASSWORD=${SUPERUSER_PASSWORD}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+
+
+  restart: unless-stopped
+
+  # Caddy
+  frontend: 
+    build:
+      context: ./frontend
+      target: production
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    depends_on:
+      - server
+
+    restart: unless-stopped
+
+  db:
+    image: postgres:18
+    container_name: afa-postgres-db
+    restart: unless-stopped
+
+    volumes:
+      - db-data:/var/lib/postgresql
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    expose:
+      - "5432"
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db-data:
+
+# Possible to update to secrets in production (.env currently used)

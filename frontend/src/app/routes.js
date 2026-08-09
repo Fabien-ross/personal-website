@@ -1,14 +1,13 @@
-const API_URL = import.meta.env.VITE_SERVER_API_URL;
-
 export const ROUTES = {
   type_route: (lang, type) => `/${lang}/docs/${type}`,
   item_route: (lang, type, slug) => `/${lang}/docs/${type}/${slug}`,
 };
 
 export const API_ROUTES = {
-  type_route: (lang, type) => `${API_URL}/api/docs/${lang}/${type}/`,
-  item_route: (lang, type, slug) => `${API_URL}/api/docs/${lang}/${type}/${slug}/`,
-  image_route: (img) => `${API_URL}/media/images/${img}`,
+  // api/ and media/ are redirected to the server
+  type_route: (lang, type) => `/api/docs/${lang}/${type}/`,
+  item_route: (lang, type, slug) => `/api/docs/${lang}/${type}/${slug}/`,
+  image_route: (img) => `/media/images/${img}`,
 }
 
 export const LINKS = [ // enable links here
