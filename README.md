@@ -111,7 +111,7 @@ project/
 
 ## Usage
 
-The frontend Dockerfile launches directly the devserver of the React project on port 5173. The only launch needed is the backend's. 
+The frontend Dockerfile launches directly the devserver of the React project on port 5173. The only launch needed is the backend's.
 
 ## License
 
