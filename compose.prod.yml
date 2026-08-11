@@ -31,9 +31,9 @@ services:
       target: production
 
     ports:
-      - "8080:80"
-      #- "80:80"
-      #- "443:443"
+      #- "8080:80" for cloudflare and local verifications
+      - "80:80"
+      - "443:443"
 
     depends_on:
       - server

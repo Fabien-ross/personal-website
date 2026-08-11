@@ -1,4 +1,4 @@
-:80 {
+fabienrosset.com {
     handle_path /media/* {
         root * /media
         file_server
