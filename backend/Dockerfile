@@ -72,4 +72,4 @@ EXPOSE 8000
 # ENTRYPOINT is mandatory here to generate and transmit static files during the runtime
 # because the build doesn't have access to the .env variables which raises an error.
 ENTRYPOINT ["/entrypoint.sh"] 
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--access-logfile", "-", "--error-logfile", "-", "--log-level", "debug"]
