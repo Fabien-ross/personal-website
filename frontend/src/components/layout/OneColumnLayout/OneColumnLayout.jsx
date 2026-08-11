@@ -4,6 +4,8 @@ import { usePageTheme } from "../../themes/PageThemeContext";
 
 import { API_ROUTES } from "../../../app/routes";
 
+import TextColumn from "../../ui/TextColumn/TextColumn";
+
 export default function OneColumnLayout({
   image_path,
   title,
@@ -36,10 +38,8 @@ export default function OneColumnLayout({
         alt={title}
       />
 
-      <div className="one-col-text">
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
+      <TextColumn className="col-text" title={title} author={author} description={description} children={other} />
+
     </section>
   );
 }

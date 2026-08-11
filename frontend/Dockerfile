@@ -8,6 +8,7 @@ ARG NODE_VERSION=24-alpine
 
 FROM node:${NODE_VERSION} AS base
 
+# The workdir name appears in the compose.yml
 WORKDIR /app
 
 # Install dependencies

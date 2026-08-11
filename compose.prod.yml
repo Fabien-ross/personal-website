@@ -19,9 +19,10 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
-
-  restart: unless-stopped
+    volumes:
+      - media-data:/app/media
+      - static-data:/app/staticfiles
+    restart: unless-stopped
 
   # Caddy
   frontend: 
@@ -30,18 +31,25 @@ services:
       target: production
 
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:80"
+      #- "80:80"
+      #- "443:443"
 
     depends_on:
       - server
+    
+    volumes:
+      - media-data:/media:ro  # The left path is coherent with the path in the Caddyfile.
+      
+      - caddy-data:/data      # These 2 volumes are advised to keep TCL certif among other 
+      - caddy-config:/config  # caddy files and config.
+      - static-data:/srv/static:ro
 
     restart: unless-stopped
 
   db:
     image: postgres:18
     container_name: afa-postgres-db
-    restart: unless-stopped
 
     volumes:
       - db-data:/var/lib/postgresql
@@ -59,8 +67,14 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    
+    restart: unless-stopped
 
 volumes:
   db-data:
+  media-data: # created to mount the data in the backend container
+  caddy-data:
+  caddy-config:
+  static-data:
 
-# Possible to update to secrets in production (.env currently used)
+# Possible to update to secrets in production later (.env is currently used)
