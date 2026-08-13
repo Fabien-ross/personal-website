@@ -38,7 +38,7 @@ export default function OneColumnLayout({
         alt={title}
       />
 
-      <TextColumn className="col-text" title={title} author={author} description={description} children={other} />
+      <TextColumn className="one-col-text" title={title} author={author} description={description} children={other} />
 
     </section>
   );

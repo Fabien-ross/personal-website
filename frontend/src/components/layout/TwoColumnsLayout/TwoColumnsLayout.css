@@ -27,9 +27,15 @@
   z-index: 1;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .col-image {
     opacity: 0;
+  } 
+  .two-columns-layout {
+    grid-template-columns: 1fr;
+    }
+  .two-columns-layout-reversed {
+    grid-template-columns: 1fr;
   }
 
 }
