@@ -12,7 +12,7 @@ export const API_ROUTES = {
 
 export const LINKS = [ // enable links here
   { key: "home", path: lang => `/${lang}`, enabled: true },
-  { key: "essays", path: lang => ROUTES.type_route(lang, "essays"), enabled: false },
+  { key: "essays", path: lang => ROUTES.type_route(lang, "essays"), enabled: true },
   { key: "novels", path: lang => ROUTES.type_route(lang, "novels"), enabled: true },
   { key: "poems", path: lang => ROUTES.type_route(lang, "poems"), enabled: true },
   { key: "quotes", path: lang => ROUTES.type_route(lang, "quotes"), enabled: false },
