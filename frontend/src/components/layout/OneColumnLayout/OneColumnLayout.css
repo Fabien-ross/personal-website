@@ -37,7 +37,8 @@
 .one-col-image {
   margin: 20px;
   height: calc(100dvh - 100px);
-  position: relative; 
+  position: relative;
+
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 
@@ -53,7 +54,7 @@
 }
 
 .one-col-image img {
-  position: absolute;
+  position: relative;
   width: 620px;
   height: auto;
   object-fit: contain;
