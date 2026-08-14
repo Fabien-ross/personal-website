@@ -16,10 +16,15 @@ jobs:
           echo "${{ secrets.DEPLOYMENT_KEY }}" > ~/.ssh/id_ed25519_git_deployment
           chmod 600 ~/.ssh/id_ed25519_git_deployment
           ssh-keyscan -p 22 -t ed25519 ${{ secrets.DEPLOYMENT_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: Inspect source
+          run: |
+            pwd
+            find . -maxdepth 2 -type f | sort | head -100
 
       - name: Deploy to Hetzner
         run: |
-          rsync -az -M--debug=FILTER --delete \
+          rsync -azn -M--debug=FILTER --delete \
           -f'-p .env.prod' \
           -f'+ .env.example' \
           -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
