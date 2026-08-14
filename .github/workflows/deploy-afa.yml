@@ -20,11 +20,12 @@ jobs:
       - name: Inspect source
         run: |
           pwd
-          find . -maxdepth 2 -type f | sort | head -100
+          ls -la
+          find . -maxdepth 1 -type f -printf '%f\n' | sort
 
       - name: Deploy to Hetzner
         run: |
-          rsync -azn -M--debug=FILTER --delete \
+          rsync -azn -M--debug=FILTER --delete --itemize-changes \
           -f'-p .env.prod' \
           -f'+ .env.example' \
           -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
