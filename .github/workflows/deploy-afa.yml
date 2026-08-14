@@ -19,9 +19,9 @@ jobs:
 
       - name: Deploy to Hetzner
         run: |
-          rsync -azn -M--debug=FILTER --delete \
+          rsync -az -M--debug=FILTER --delete \
           -f'-p .env.prod' \
-          -f'- .env.example' \
+          -f'+ .env.example' \
           -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
           ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
           
