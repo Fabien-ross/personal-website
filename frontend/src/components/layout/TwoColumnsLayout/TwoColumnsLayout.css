@@ -28,9 +28,6 @@
 }
 
 @media (max-width: 768px) {
-  .col-image {
-    opacity: 0;
-  } 
   .two-columns-layout {
     grid-template-columns: 1fr;
     }

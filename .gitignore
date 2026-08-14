@@ -88,3 +88,6 @@ frontend/.prettierrc
 
 # dev
 .devcontainer
+
+# Backup databases
+/backups

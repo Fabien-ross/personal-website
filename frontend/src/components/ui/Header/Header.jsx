@@ -17,7 +17,7 @@ function Header({ crossHeader }){
         <header className="header"
             style={{
             "--background-color": pageTheme.dark ? "#1a1a1a" : "white",
-            "--text-color": pageTheme.dark ? "white" : "#1a1a1a"
+            "--text-color": pageTheme.dark ? "white" : "#1a1a1a",
             }}
         >
             {!crossHeader &&
@@ -25,12 +25,13 @@ function Header({ crossHeader }){
                 <div className="header-left">
                     <Navbar />
                 </div>
-
-                <div className="header-left-small">
-                    <SideMenu />
-                </div>
             </>
             }
+
+                <div className="header-left-small">
+                    <SideMenu boolCross={!!crossHeader} />
+                </div>
+            
 
             <div className="header-right">
                 <LanguageButton />

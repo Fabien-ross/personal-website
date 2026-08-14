@@ -6,7 +6,7 @@ import Menu from "../Menu/Menu"
 
 import "./SideMenu.css";
 
-export default function SideMenu() {
+export default function SideMenu({boolCross}) {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const { lang } = useParams();
