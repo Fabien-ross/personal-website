@@ -34,6 +34,9 @@
   .two-columns-layout-reversed {
     grid-template-columns: 1fr;
   }
+  .col-image {
+    opacity:0
+  }
 
 }
 
