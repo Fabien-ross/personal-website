@@ -13,14 +13,14 @@ jobs:
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOYMENT_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.DEPLOYMENT_KEY }}" > ~/.ssh/id_ed25519_git_connection
+          chmod 600 ~/.ssh/id_ed25519_git_connection
           ssh-keyscan -p 22 -t ed25519 ${{ secrets.DEPLOYMENT_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to Hetzner
         run: |
 
-          ssh -i ~/.ssh/id_ed25519 \
+          ssh -i ~/.ssh/id_ed25519_git_connection \
             -p 22 \
             ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }} \
             'cd ~/app && git pull && docker compose -f compose.prod.yml --env-file .env.prod up -d --build'
