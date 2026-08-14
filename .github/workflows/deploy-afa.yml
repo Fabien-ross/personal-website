@@ -13,14 +13,23 @@ jobs:
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOYMENT_KEY }}" > ~/.ssh/id_ed25519_git_connection
-          chmod 600 ~/.ssh/id_ed25519_git_connection
+          echo "${{ secrets.DEPLOYMENT_KEY }}" > ~/.ssh/id_ed25519_git_deployment
+          chmod 600 ~/.ssh/id_ed25519_git_deployment
           ssh-keyscan -p 22 -t ed25519 ${{ secrets.DEPLOYMENT_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to Hetzner
         run: |
+          rsync -az --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.env*' \
+            --exclude='README.md' \
+            --exclude='compose.yml' \
+            --exclude='.devcontainer/' \
+            -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
+            ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
 
-          ssh -i ~/.ssh/id_ed25519_git_connection \
+          ssh -i ~/.ssh/id_ed25519_git_deployment \
             -p 22 \
             ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }} \
-            'cd ~/app && git pull && docker compose -f compose.prod.yml --env-file .env.prod up -d --build'
+            'cd ~/app && docker compose -f compose.prod.yml --env-file .env.prod up -d --build'
