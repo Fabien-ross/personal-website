@@ -16,7 +16,7 @@ A minimal full-stack web application using Django for the backend, React for the
 
 ---
 
-## Technologies
+## Technologies 
 
 * Backend: Django (Python)
 * Frontend: React (Vite)
