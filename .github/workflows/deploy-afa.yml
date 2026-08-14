@@ -18,9 +18,9 @@ jobs:
           ssh-keyscan -p 22 -t ed25519 ${{ secrets.DEPLOYMENT_HOST }} >> ~/.ssh/known_hosts
       
       - name: Inspect source
-          run: |
-            pwd
-            find . -maxdepth 2 -type f | sort | head -100
+        run: |
+          pwd
+          find . -maxdepth 2 -type f | sort | head -100
 
       - name: Deploy to Hetzner
         run: |
