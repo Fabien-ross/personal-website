@@ -19,16 +19,16 @@ jobs:
 
       - name: Deploy to Hetzner
         run: |
-          rsync -az --delete \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='.env*' \
-            --exclude='README.md' \
-            --exclude='compose.yml' \
-            --exclude='.devcontainer/' \
-            -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
-            ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
-
+          rsync -az -M--debug=FILTER --delete \
+          -f'-p .env.prod' \
+          -f'- .git/' \
+          -f'- .github/' \
+          -f'- .env*' \
+          -f'- README.md' \
+          -f'- compose.yml' \
+          -f'- .devcontainer/' \
+          -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
+          ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
           ssh -i ~/.ssh/id_ed25519_git_deployment \
             -p 22 \
             ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }} \
