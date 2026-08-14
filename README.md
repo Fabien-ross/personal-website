@@ -1,7 +1,7 @@
 # Python (with Django) and React : dev environment in Docker 
 
 A minimal full-stack web application using Django for the backend, React for the frontend, PostgreSQL as the database, and Docker for the development environment. Download, and start coding!
-
+ 
 ---
 
 ## Table of Contents
