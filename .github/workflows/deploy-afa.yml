@@ -29,13 +29,15 @@ jobs:
       - name: Deploy to Hetzner
         run: |
           rsync -az -M--debug=FILTER --delete --itemize-changes \
-          -f'-p .env.prod' \
           -f'- .git/' \
           -f'- .github/' \
-          -f'- .env*' \
+          -f'- .gitignore' \
+          -f'- .env.example' \
           -f'- README.md' \
+          -f'- LICENSE' \
           -f'- compose.yml' \
           -f'- .devcontainer/' \
+          -f'-p .env.prod' \
           -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
           ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
           
