@@ -19,7 +19,12 @@ jobs:
 
       - name: Deploy to Hetzner
         run: |
+          rsync -azn -M--debug=FILTER --delete\
+          -f'-p .env.prod' \
+          -e "ssh -i ~/.ssh/id_ed25519_git_deployment -p 22" \
+          ./ ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }}:~/app/
+          
           ssh -i ~/.ssh/id_ed25519_git_deployment \
             -p 22 \
             ${{ secrets.DEPLOYMENT_USERNAME }}@${{ secrets.DEPLOYMENT_HOST }} \
-            'cd ~/app && git pull && docker compose -f compose.prod.yml --env-file .env.prod up -d --build'
+            'cd ~/app && docker compose -f compose.prod.yml --env-file .env.prod up -d --build'
