@@ -87,6 +87,11 @@
     flex-direction: column;
   }
 
+  .wrapper {
+    overflow-y: visible;
+    height: auto;
+  }
+
   .content-box {
     min-height: auto;
     min-width: 100%;
