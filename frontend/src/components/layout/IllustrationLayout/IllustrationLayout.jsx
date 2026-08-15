@@ -27,12 +27,7 @@ export default function IllustrationLayout({
 
   useEffect(() => {
     const element = ref.current;
-    if (!element) return;
-
-    // Uniquement desktop avec souris/trackpad précis
-    if (!window.matchMedia("(pointer: fine)").matches) {
-      return;
-    }
+    if (!element || window.innerWidth < 768) return;
 
     const SPEED = 0.4;
 
@@ -76,9 +71,9 @@ export default function IllustrationLayout({
       />
     </div>
 
-    <div className="illustration-wrapper" ref={ref}>
+    <div className="box-wrapper" ref={ref}>
       <ContentTextBox
-        className="illustration-content-box"
+        className="text-illus-content-box"
         title={title}
         author={author}
         description={description}

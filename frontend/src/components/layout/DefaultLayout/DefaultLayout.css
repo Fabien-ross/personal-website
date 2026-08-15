@@ -4,6 +4,7 @@
   min-height: 100dvh;
 
   transition: display 0.3s ease;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .background-image {
@@ -53,6 +54,13 @@
   mask-composite: intersect;
 
   transition: padding 0.3s ease;
+}
+
+.content-box .author {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: -15px;
+  text-align: right;
 }
 
 .bottom-mask {

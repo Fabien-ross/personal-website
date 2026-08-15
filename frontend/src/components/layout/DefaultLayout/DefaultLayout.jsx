@@ -27,12 +27,7 @@ export default function DefaultLayout({
 
   useEffect(() => {
     const element = ref.current;
-    if (!element) return;
-
-    // Uniquement desktop avec souris/trackpad précis
-    if (!window.matchMedia("(pointer: fine)").matches) {
-      return;
-    }
+    if (!element || window.innerWidth < 768) return;
 
     const SPEED = 0.4;
 

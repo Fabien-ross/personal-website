@@ -11,18 +11,20 @@
   color: var(--text-color);
 
   overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mobile-title {
+  display: none;
 }
 
 .img-wrapper {
-  display: inline-block;
   width: fit-content;
   height: fit-content;
 
   margin: 80px 20px 20px 40px;
   
-
   background-color: var(--img-bg-color);
-
   border: 3px solid #7d7575;
   border-radius: 8px;
   overflow: hidden;
@@ -35,22 +37,13 @@
   max-width: 100%;
 }
 
-.mobile-title {
-  display: none;
-}
-
-.illustration-wrapper {
-  position: relative;
+.box-wrapper {
   z-index: 1;
 
-  padding-top:40px;
+  padding: 35px 30px 30px 40px;
 
   width: 75%;
   height: 100dvh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   overflow-y: auto;
   scrollbar-width: none;
@@ -58,17 +51,12 @@
   scroll-behavior: auto;
 }
 
-.illustration-wrapper::-webkit-scrollbar {
+.box-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.illustration-content-box {
+.text-illus-content-box {
   width: 100%;
-  min-width: 0;
-
-  box-sizing: border-box;
-
-  padding: 0px 30px 30px 40px;
 
   background: var(--background-color);
   color: var(--text-color);
@@ -81,27 +69,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow: visible;
 
     align-items: center;
   }
 
   .mobile-title {
     display: block;
-
     order: 1;
-
     width: 100%;
-    box-sizing: border-box;
-
-    padding: 80px 25px 20px;
+    
+    padding: 60px 25px 20px;
 
     background: var(--background-color);
     color: var(--text-color);
-  }
-
-  .mobile-title h1 {
-    margin: 0;
   }
 
   .img-wrapper {
@@ -110,30 +90,27 @@
     order: 2;
 
     height: auto;
+    overflow: visible;
 
-    margin-top: 10px;
-    margin-bottom: 0px;
-
+    margin: 10px 20px 0px 20px;
   }
 
-  .illustration-wrapper {
+  .box-wrapper {
     order: 3;
 
     width: 100%;
     min-height: auto;
+    overflow-y: visible;
+    height: auto;
 
     margin: 0;
-
-    display: block;
-
-    overflow: visible;
   }
 
-  .illustration-content-box {
+  .text-illus-content-box {
     width: 100%;
     min-width: 0;
 
-    padding: 30px 25px 50px;
+    padding: 0px 0px 20px 0px;
 
     box-sizing: border-box;
 
@@ -141,20 +118,10 @@
     color: var(--text-color);
   }
 
-  .illustration-content-box .title {
+  .text-illus-content-box .title {
     display:none
   }
 }
 
 
 
-@media (max-width: 500px) {
-
-  .illustration-content-box {
-    padding: 25px 20px 40px;
-  }
-
-  .illustration {
-    max-height: 60dvh;
-  }
-}
