@@ -26,18 +26,20 @@ export default function IllustrationLayout({
   }, [dark, reverse, setPageTheme]);
 
   useEffect(() => {
+    const SPEED = 0.5;
+
     const onWheel = (e) => {
-      if (window.innerWidth <= 800) return;
-      console.log(ref.current);
       e.preventDefault();
 
       ref.current?.scrollBy({
-        top: e.deltaY,
+        top: e.deltaY * SPEED,
         behavior: "auto",
       });
     };
 
-    window.addEventListener("wheel", onWheel, { passive: false });
+    if (window.matchMedia("(pointer: fine)").matches) {
+      window.addEventListener("wheel", onWheel, { passive: false });
+    }
 
     return () => {
       window.removeEventListener("wheel", onWheel);

@@ -26,17 +26,20 @@ export default function DefaultLayout({
   }, [dark, reverse, setPageTheme]);
 
   useEffect(() => {
+    const SPEED = 0.5;
+
     const onWheel = (e) => {
-      console.log(ref.current);
       e.preventDefault();
 
       ref.current?.scrollBy({
-        top: e.deltaY * 0.33,
+        top: e.deltaY * SPEED,
         behavior: "auto",
       });
     };
 
-    window.addEventListener("wheel", onWheel, { passive: false });
+    if (window.matchMedia("(pointer: fine)").matches) {
+      window.addEventListener("wheel", onWheel, { passive: false });
+    }
 
     return () => {
       window.removeEventListener("wheel", onWheel);
