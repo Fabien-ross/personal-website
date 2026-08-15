@@ -15,7 +15,8 @@
     "quote": {"content": "❝Le but de l'art est de laver la poussière de la vie quotidienne de nos âmes.❞",
               "author": "Pablo Picasso"
     },
-    "description": "Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élans de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. \r\n\r\nTrouvez ici quelques tentatives en ce sens. \r\n\r\n*Les images du site peuvent ne pas s'afficher sur votre téléphone. Par ailleurs, ce site manque un peu de couleur, mais de nouvelles mises à jours arrivent bientôt pour apporter de nombreuses améliorations !*"
+    "description": "Dans une époque troublée — en fut-il un jour autrement? —, il fait parfois bon laisser libre cours aux élans de son coeur, détendre son esprit et plonger dans les courants frais de la recherche du beau. Il fait bon fermer la porte au bruit ambiant et écouter, simplement, la profondeur du monde. \r\n\r\nTrouvez ici quelques tentatives en ce sens.",
+    "disclaimer": "*Certains composants peuvent ne pas très bien s'afficher sur votre mobile... Passez sur PC pour une meilleure expérience ! Par ailleurs, ça manque un peu de couleur, mais de nouvelles mises à jours arrivent bientôt!*"
   },
 
   "about": {
@@ -58,7 +59,7 @@
 
   "graphic_presentation": {
     "title": "Illustrations",
-    "description" : "L'oeil reste celui de nos sens dont l'absence retire le plus de charme à la vie. \r\n\r\nJe ne me prétend pas dessinateur, mais je souhaitais répertorier ici les illustrations de ce site accompagnées d'une description des idées derrière leur composition :"
+    "description" : "L'oeil reste celui de nos sens dont l'absence retire le plus de charme à la vie. \r\n\r\nLes illustrations que vous avez rencontré en parcourant ce site sont répertoriées ici — elles ne sont pour l'instant pas très nombreuses ! —, accompagnées d'une description des idées derrière leur composition :"
   },
 
   "music_presentation": {

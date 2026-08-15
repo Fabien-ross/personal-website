@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import TwoColumnsLayout from "../components/layout/TwoColumnsLayout/TwoColumnsLayout";
+import DefaultLayout from "../components/layout/DefaultLayout/DefaultLayout";
+import GalleryLayout from "../components/layout/GalleryLayout/GalleryLayout";
 import ArticleList from "../components/ui/ArticleList/ArticleList";
 import { getItemSet as getItemSet } from "../api/contentApi";
 
@@ -47,16 +48,27 @@ export default function CategoryPage() {
 
   const CardComponent = articleCards[type] || WrittenArticleCard;
 
-  return (
-    <main>
-      <TwoColumnsLayout
-        image_path={config.image.src1}
-        title={t(config.title)}
-        description={t(config.description)}
-        other={<ArticleList CardComponent={CardComponent} articles={items} />}
-        reverse={config.reverse}
-        dark={config.dark}
-      />
-    </main>
-  );
+  if (type == "graphic"){
+      return (
+        <GalleryLayout
+          title={t(config.title)}
+          description={t(config.description)}
+          other={<ArticleList CardComponent={CardComponent} articles={items} />}
+          dark={config.dark}
+        />
+      );
+    } else {
+        return (
+      <main>
+        <DefaultLayout
+          image_path={config.image.src1}
+          title={t(config.title)}
+          description={t(config.description)}
+          other={<ArticleList CardComponent={CardComponent} articles={items} />}
+          reverse={config.reverse}
+          dark={config.dark}
+        />
+      </main>
+    );
+  }
 }

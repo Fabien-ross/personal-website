@@ -10,7 +10,7 @@ import "./Header.css"
 
 function Header({ crossHeader }){
     const { pageTheme, setAlternateSlug } = usePageTheme();
-    const { lang, type } = useParams();
+    const { lang, type, slug } = useParams();
     const navigate = useNavigate();
 
     return(
@@ -18,23 +18,23 @@ function Header({ crossHeader }){
             style={{
             "--background-color": pageTheme.dark ? "#1a1a1a" : "white",
             "--text-color": pageTheme.dark ? "white" : "#1a1a1a",
-            }}
-        >
+            "--is-item-page": slug !== undefined ? "flex" : "none"
+        }}>
             {!crossHeader &&
-            <>
-                <div className="header-left">
-                    <Navbar />
-                </div>
-            </>
+                <>
+                    <div className="header-left">
+                        <Navbar />
+                    </div>
+                </>
             }
 
-                <div className="header-left-small">
-                    <SideMenu boolCross={!!crossHeader} />
-                </div>
+            <div className="header-left-small">
+                <SideMenu boolCross={!!crossHeader} />
+            </div>
             
 
             <div className="header-right">
-                <LanguageButton />
+                <LanguageButton className="lang-button"/>
                 {crossHeader &&
                     <button className="cross-button" onClick={
                         () => {
@@ -44,7 +44,6 @@ function Header({ crossHeader }){
                     </button>
                 }
             </div>            
-            
         </header>
     )
 }

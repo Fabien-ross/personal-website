@@ -20,3 +20,47 @@ body {
   height: 100%;
   overflow: hidden;
 }
+
+/* FONTS */
+
+body {
+  font-family: "Lora", serif;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+
+/* PADDING */
+
+.section {
+  padding: clamp(40px, 6vw, 100px)
+           clamp(20px, 5vw, 100px);
+}

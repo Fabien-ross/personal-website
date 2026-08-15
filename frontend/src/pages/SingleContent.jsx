@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
 import { usePageTheme } from "../components/themes/PageThemeContext";
-import TwoColumnsLayout from "../components/layout/TwoColumnsLayout/TwoColumnsLayout";
-import OneColumnLayout from "../components/layout/OneColumnLayout/OneColumnLayout";
+import DefaultLayout from "../components/layout/DefaultLayout/DefaultLayout";
+import IllustrationLayout from "../components/layout/IllustrationLayout/IllustrationLayout";
 
 import { getItem  } from "../api/contentApi";
 
@@ -42,7 +42,7 @@ export default function SingleContent() {
 
   if (type == "graphic"){
     return (
-      <OneColumnLayout
+      <IllustrationLayout
         image_path={item.media}
         title={item.translation.title}
         description={item.translation.content}
@@ -52,7 +52,7 @@ export default function SingleContent() {
     );
   } else {
     return (
-      <TwoColumnsLayout
+      <DefaultLayout
         image_path={item.media}
         title={item.translation.title}
         description={item.translation.content}

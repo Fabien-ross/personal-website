@@ -1,0 +1,160 @@
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+
+  display: flex;
+  align-items: stretch;
+
+  background: var(--background-color);
+  color: var(--text-color);
+
+  overflow: hidden;
+}
+
+.img-wrapper {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+
+  margin: 80px 20px 20px 40px;
+  
+
+  background-color: var(--img-bg-color);
+
+  border: 3px solid #7d7575;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.illustration {
+  display: block;
+  width: auto;
+  max-height: 90vh;
+  max-width: 100%;
+}
+
+.mobile-title {
+  display: none;
+}
+
+.illustration-wrapper {
+  position: relative;
+  z-index: 1;
+
+  padding-top:40px;
+
+  width: 75%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: auto;
+  scrollbar-width: none;
+  overscroll-behavior: auto;
+  scroll-behavior: auto;
+}
+
+.illustration-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.illustration-content-box {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 0px 30px 30px 40px;
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+
+@media (max-width: 800px) {
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: visible;
+
+    align-items: center;
+  }
+
+  .mobile-title {
+    display: block;
+
+    order: 1;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 80px 25px 20px;
+
+    background: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .mobile-title h1 {
+    margin: 0;
+  }
+
+  .img-wrapper {
+    display: block;
+    position: relative;
+    order: 2;
+
+    height: auto;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+
+  }
+
+  .illustration-wrapper {
+    order: 3;
+
+    width: 100%;
+    min-height: auto;
+
+    margin: 0;
+
+    display: block;
+
+    overflow: visible;
+  }
+
+  .illustration-content-box {
+    width: 100%;
+    min-width: 0;
+
+    padding: 30px 25px 50px;
+
+    box-sizing: border-box;
+
+    background: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .illustration-content-box .title {
+    display:none
+  }
+}
+
+
+
+@media (max-width: 500px) {
+
+  .illustration-content-box {
+    padding: 25px 20px 40px;
+  }
+
+  .illustration {
+    max-height: 60dvh;
+  }
+}

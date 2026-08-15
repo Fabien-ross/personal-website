@@ -3,4 +3,13 @@
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 1rem;
   justify-content: left;
+  padding-top:20px;
+}
+
+@media (max-width:768px) {
+
+  .articles {
+    justify-content: center;
+  }
+
 }

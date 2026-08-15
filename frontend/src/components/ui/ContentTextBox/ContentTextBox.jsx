@@ -1,19 +1,31 @@
 import ReactMarkdown from "react-markdown";
 import remarkBreaks from "remark-breaks";
 
-import "./TextColumn.css";
+import "./ContentTextBox.css";
 
-function TextColumn({ className, title, author, description, children }) {
+export default function ContentTextBox({ 
+  className, 
+  title, 
+  author, 
+  description, 
+  children, 
+  dark = false,
+}) {
+
   return (
-    <section className={className}>
-      <div className="col-text-content">
-
+    <section
+      className={className}
+      style={{
+        "--background-color": dark ? "#1a1a1a" : "white",
+        "--text-color": dark ? "white" : "#1a1a1a",
+        }}     
+    >
         {title?.trim() && (
-          <p className="title">{title}</p>
+          <h1 className="title">{title}</h1>
         )}
 
         {author?.trim() && (
-          <p className="author">{author}</p>
+          <h2 className="author">{author}</h2>
         )}
 
         {description?.trim() && (
@@ -30,9 +42,6 @@ function TextColumn({ className, title, author, description, children }) {
           </div>
         )}
 
-      </div>
     </section>
   );
 }
-
-export default TextColumn;
