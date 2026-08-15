@@ -43,7 +43,7 @@
   top: 0;
   left: -280px; /* hidden on the left */
   width: 280px;
-  height: 100vh;
+  height: 100dvh;
   background: var(--background-color);
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
   transition: left 0.3s ease;

@@ -31,7 +31,7 @@ export default function DefaultLayout({
       e.preventDefault();
 
       ref.current?.scrollBy({
-        top: e.deltaY,
+        top: e.deltaY * 0.33,
         behavior: "auto",
       });
     };
