@@ -26,23 +26,29 @@ export default function IllustrationLayout({
   }, [dark, reverse, setPageTheme]);
 
   useEffect(() => {
-    const SPEED = 0.5;
+    const element = ref.current;
+    if (!element) return;
+
+    // Uniquement desktop avec souris/trackpad précis
+    if (!window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
+
+    const SPEED = 0.4;
 
     const onWheel = (e) => {
       e.preventDefault();
 
-      ref.current?.scrollBy({
+      element.scrollBy({
         top: e.deltaY * SPEED,
         behavior: "auto",
       });
     };
 
-    if (window.matchMedia("(pointer: fine)").matches) {
-      window.addEventListener("wheel", onWheel, { passive: false });
-    }
+    element.addEventListener("wheel", onWheel, { passive: false });
 
     return () => {
-      window.removeEventListener("wheel", onWheel);
+      element.removeEventListener("wheel", onWheel);
     };
   }, []);
 
