@@ -31,7 +31,7 @@ export const getItem = async (lang, type, slug) => {
 
 export const sendForm = async (email, message) => {
 
-  const response = await fetch(`${API_URL}/api/contact/`, {
+  const response = await fetch(API_ROUTES.contact_route, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

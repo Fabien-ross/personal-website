@@ -7,6 +7,7 @@ export const API_ROUTES = {
   // api/ and media/ are redirected to the server
   type_route: (lang, type) => `/api/docs/${lang}/${type}/`,
   item_route: (lang, type, slug) => `/api/docs/${lang}/${type}/${slug}/`,
+  contact_route: `/api/contact/`,
   image_route: (img) => `/media/images/${img}`,
 }
 
