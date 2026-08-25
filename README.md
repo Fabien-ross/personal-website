@@ -1,7 +1,20 @@
-# Python (with Django) and React : dev environment in Docker 
+# A Personal Website Built with React and Django, Containerized with Docker
 
-A minimal full-stack web application using Django for the backend, React for the frontend, PostgreSQL as the database, and Docker for the development environment. Download, and start coding!
- 
+A reusable personal website template built with **React** and **Django**, fully containerized with **Docker**.
+
+The project is designed to display **projects, writings, illustrations, and other personal content**. Its structure is intentionally modular and easy to customize for your own website.
+
+The repository includes:
+
+* A React frontend with Vite
+* A Django backend
+* A PostgreSQL database
+* Docker-based development environment
+* VS Code Dev Container configuration
+* Development and mock data
+* A structure prepared for web production using Caddy and Gunicorn
+* Internationalization (i18n) support
+
 ---
 
 ## Table of Contents
@@ -10,109 +23,225 @@ A minimal full-stack web application using Django for the backend, React for the
 2. [Prerequisites](#prerequisites)
 3. [Installation and Setup](#installation-and-setup)
 4. [Project Structure](#project-structure)
-5. [Docker & Devcontainer](#docker--devcontainer)
-6. [Usage](#usage)
-8. [License](#license)
+5. [Docker & Dev Container](#docker--dev-container)
+6. [Internationalization](#internationalization)
+7. [Usage](#usage)
+8. [Production](#production)
+9. [License](#license)
 
 ---
 
-## Technologies 
+## Technologies
 
-* Backend: Django (Python)
-* Frontend: React (Vite)
-* Database: PostgreSQL
-* Containerization: Docker & Docker Compose
-* VSCode Devcontainer
+### Backend
+
+* **Django** — Python web framework used for the backend and API.
+* **Gunicorn** — WSGI application server used to run Django in production.
+
+### Frontend
+
+* **React** — JavaScript library used to build the user interface.
+* **Vite** — Development server and build tool for the React application.
+
+### Database
+
+* **PostgreSQL** — Relational database used by Django.
+
+### Infrastructure
+
+* **Docker** — Containerization.
+* **Docker Compose** — Management of the different development services.
+* **Caddy** — Web server and reverse proxy for production.
+* **VS Code Dev Containers** — Reproducible development environment.
 
 ---
 
 ## Prerequisites
 
+You will need:
+
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/)
-* [VSCode](https://code.visualstudio.com/) with **Remote - Containers** extension
+* [VS Code](https://code.visualstudio.com/)
+* The **Dev Containers** extension for VS Code
+
+The project was originally developed using **WSL2** on Windows. A working Docker installation is therefore required to run the complete development environment.
 
 ---
 
 ## Installation and Setup
 
-1. **Clone the repository**
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Fabien-ross/python-react-dev-project.git
-cd projectname
+cd python-react-dev-project
 ```
 
-2. **Open the project in VSCode**
+### 2. Open the project in VS Code
 
-   * VSCode will prompt to open in the devcontainer.
-   * Or manually: `Ctrl+Shift+P` → *Remote-Containers: Reopen in Container*
+Open the cloned repository in VS Code.
 
-3. **Apply Django migrations (optional)**
+If the Dev Container extension is installed, VS Code should detect the project configuration and suggest reopening the project inside the development container.
 
-The code allows for a table 'MyModel' to be built. If you want to create such a table in the empty database, you can run the following lines:
+You can also do this manually:
+
+**Ctrl + Shift + P** → **Dev Containers: Reopen in Container**
+
+This will start the development environment defined in `.devcontainer/devcontainer.json`.
+
+The project currently defines three main services:
+
+* `server` — Django backend
+* `frontend` — React/Vite frontend
+* `db` — PostgreSQL database
+
+### 3. Apply Django migrations
+
+If you are using the provided Django models and database structure, apply the migrations:
 
 ```bash
-python cd backend
+cd backend
 python manage.py migrate
 ```
 
-4. **Create a superuser (optional)**
+The database structure is provided as an example based on the author's website.
 
-```bash
-docker-compose exec backend python manage.py createsuperuser
-```
+Feel free to modify the Django models and database structure according to your own use case.
 
-5. **Launch Django development server**
+### 4. Access the application
 
-```bash
-python cd backend
-python manage.py runserver
-```
+Once the containers are running:
 
-6. **Access the application**
+* **Frontend:** http://localhost:5173
+* **Backend:** http://localhost:8000
 
-* Backend: `http://localhost:8000`
-* Frontend: `http://localhost:5173`
-
-CORS and connexions between backend and frontend inside the Docker environment have been treated. The URL `http://localhost:5173/test` allows to visualize a message sent by the backend.
+The necessary CORS configuration and communication between the frontend and backend containers are already configured for development.
 
 ---
 
-## Project Structure
+## Docker & Dev Container
 
+### Docker Compose
+
+The `docker-compose.yml` file defines the main development services:
+
+```text
+server    → Django backend
+frontend  → React/Vite development server
+db        → PostgreSQL
 ```
-project/
-├─ backend/             # Django
-|  ├─ apps/             # Minimal app inside
-|  ├─ config/
-│  ├─ manage.py
-│  ├─ Dockerfile        # backend Dockerfile
-│  ├─ requirements.txt  # backend packages
-│  └─ ...
-├─ frontend/            # React
-│  ├─ src/
-│  ├─ Dockerfile        # frontend Dockerfile
-│  ├─ package.json      # backend packages
-│  └─ ...
-├─ compose.yml          
-├─ .devcontainer/    
-└─ README.md
-```
+
+This allows the entire development environment to be run consistently without installing Python, Node.js, or PostgreSQL directly on the host system.
+
+### Dev Container
+
+The `.devcontainer/devcontainer.json` file configures the VS Code development environment.
+
+Opening the project inside the Dev Container provides a consistent environment for development and avoids differences between host configurations.
 
 ---
 
-## Docker & Devcontainer
+## Internationalization
 
-* `docker-compose.yml` defines 3 services: `server`, `frontend`, `db`
-* `.devcontainer/devcontainer.json` configures the VSCode development environment:
+The project includes an **i18n (internationalization)** system to support multiple languages.
+
+The current implementation can be found in:
+
+```text
+frontend/src/i18n/
+```
+
+Translation files are stored as JSON files.
+
+For example:
+
+```text
+frontend/
+└── src/
+    └── i18n/
+        ├── en.json
+        └── fr.json
+```
+
+You can modify or add translation files to adapt the website to your own languages and content.
+
+The existing translation files are based on the author's website and should therefore be considered examples/templates.
 
 ---
 
 ## Usage
 
-The frontend Dockerfile launches directly the devserver of the React project on port 5173. The only launch needed is the backend's.
+During development, the React Docker container launches the **Vite development server** on port `5173`.
+
+The Django backend runs on port `8000`.
+
+In the standard development setup, the required containers are started through Docker Compose:
+
+```bash
+docker compose up
+```
+
+The frontend can then be accessed at:
+
+```text
+http://localhost:5173
+```
+
+and the Django backend at:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## Production
+
+The repository also contains the structure required for a production deployment.
+
+The intended production architecture is:
+
+```text
+                    ┌─────────────┐
+                    │   Internet  │
+                    └──────┬──────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │    Caddy    │
+                    │ Web Server  │
+                    │ Reverse     │
+                    │ Proxy       │
+                    └──────┬──────┘
+                           │
+                  ┌────────┴────────┐
+                  │                 │
+                  ▼                 ▼
+            React static       Gunicorn
+              files               │
+                                  ▼
+                               Django
+                                  │
+                                  ▼
+                             PostgreSQL
+```
+
+In production:
+
+* **Caddy** handles incoming HTTP/HTTPS traffic and serves the frontend.
+* **Gunicorn** runs the Django application.
+* **Django** handles backend logic and API requests.
+* **PostgreSQL** stores persistent application data.
+
+The production configuration is provided as a structure/template and may require additional configuration depending on the hosting environment.
+
+---
 
 ## License
 
-The code in this repository is released under the MIT license. Read more at the [Open Source Initiative](https://opensource.org/licenses/MIT).
+The code in this repository is released under the **MIT License**.
+
+You are free to use, modify, and redistribute the code according to the terms of the license.
+
+See the [MIT License](https://opensource.org/licenses/MIT) for more information.
