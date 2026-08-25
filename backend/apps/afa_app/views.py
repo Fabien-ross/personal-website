@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from .models import Document, Contact
 from .serializers import DocumentSerializer, ContactSerializer
-
+from rest_framework.permissions import AllowAny
 
 class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
@@ -24,6 +24,8 @@ class DocumentViewSet(viewsets.ModelViewSet):
 
 
 class ContactViewSet(viewsets.ModelViewSet):
+    permission_classes = [AllowAny]
+    authentication_classes = []
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     
