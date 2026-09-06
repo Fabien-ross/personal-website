@@ -1,4 +1,10 @@
 fabienrosset.com {
+    
+    log {
+        output file /var/log/caddy/access.log
+        format json
+    }
+
     handle_path /media/* {
         root * /media
         file_server
