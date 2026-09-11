@@ -14,7 +14,6 @@ import {
 } from "../components/ui/CardComponents";
 
 import { contentConfig } from "../config/contentConfig";
-import { useRouteError } from "react-router-dom";
 
 export default function CategoryPage() {
 

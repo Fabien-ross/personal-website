@@ -1,18 +1,16 @@
 from rest_framework import viewsets
-from .models import Document, Contact
+from .models import Document
 from .serializers import DocumentSerializer, ContactSerializer
 from rest_framework.permissions import AllowAny
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 
 class DocumentViewSet(viewsets.ModelViewSet):
-    serializer_class = DocumentSerializer
+    serializer_class = DocumentSerializer #automatically uses the serializer defined
 
     def get_queryset(self): # get a set of objects
-        language = self.kwargs.get("language") # needed for the serializer
+        #language = self.kwargs["language"] # needed? for the serializer
         doc_type = self.kwargs.get("type")
 
         return Document.objects.filter(
@@ -20,15 +18,14 @@ class DocumentViewSet(viewsets.ModelViewSet):
         ).distinct()
 
     def get_object(self): # get one specific item
-        language = self.kwargs["language"] # needed for the serializer
+        #language = self.kwargs["language"] # needed? for the serializer
         slug = self.kwargs["slug"]
 
         return Document.objects.get(
-            translations__slug=slug
+            translations__slug=slug # translations is the related_name and "__" is used to access the slug field of the related DocumentTranslation model
         )
 
 
-#@method_decorator(csrf_exempt, name="dispatch")
 class ContactView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = []

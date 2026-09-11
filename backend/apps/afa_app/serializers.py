@@ -12,7 +12,8 @@ class DocumentTranslationSerializer(serializers.ModelSerializer):
         ]
 
 class DocumentSerializer(serializers.ModelSerializer):
-    translation = serializers.SerializerMethodField()   # define the 'translation' field
+    translation = serializers.SerializerMethodField()   # automatically calls get_translation
+    languages = serializers.SerializerMethodField()   # automatically calls get_languages
     
     class Meta:
         model = Document
@@ -23,39 +24,24 @@ class DocumentSerializer(serializers.ModelSerializer):
             "metadata",
             "media",
             "translation",  # adds the 'translation' field
+            "languages"   # adds the 'languages' field
         ]
+
+    def get_languages(self, obj):
+        return list(obj.translations.values_list("language", flat=True))
 
     def get_translation(self, obj):
         lang = self.context["view"].kwargs["language"]
 
         translation = (
             obj.translations.filter(language=lang).first()
-            or obj.translations.filter(language="fr").first() #fallback
+            or obj.translations.first()
         )
 
         if not translation:
             return None
 
-        data = dict(DocumentTranslationSerializer(translation).data)
-
-        # we put alertnateSlug to None if there is no english translation so that the flag disappears in the frontend
-        alternate_language = "en" if lang == "fr" or (lang=="en" and translation.language == "fr") else "fr" 
-
-        alternate_translation = obj.translations.filter(
-            language=alternate_language
-        ).first()
-
-        lang_metadata = dict(translation.lang_metadata or {})
-
-        lang_metadata["alternateSlug"] = (
-            alternate_translation.slug
-            if alternate_translation
-            else None
-        )
-
-        data["lang_metadata"] = lang_metadata
-
-        return data
+        return DocumentTranslationSerializer(translation).data
 
 
 class ContactSerializer(serializers.ModelSerializer):

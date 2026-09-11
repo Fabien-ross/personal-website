@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 import Menu from "../Menu/Menu"
 
 import "./SideMenu.css";
 
-export default function SideMenu({boolCross}) {
+export default function SideMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
-  const { lang } = useParams();
 
   return (
     <>
@@ -18,8 +14,9 @@ export default function SideMenu({boolCross}) {
         onClick={() => setIsOpen(!isOpen)}
       >☰</button>
 
-      <Menu className={`sidemenu ${isOpen ? "show" : ""}`}onMouseLeave={() => setIsOpen(false)}/>
-
+      <Menu className={`sidemenu ${isOpen ? "show" : ""}`} 
+            onNavigate={() => setIsOpen(false)} />
+      
       {isOpen && (
         <div
           className="overlay"

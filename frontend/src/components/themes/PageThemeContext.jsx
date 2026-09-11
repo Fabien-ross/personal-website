@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const PageThemeContext = createContext();
 
 export default function PageThemeProvider({ children }) {
-  const [alternateSlug, setAlternateSlug] = useState(null); // To share the alternate slug to the Header
+  const [isFallbackLang, setIsFallbackLang] = useState(null); // To share the alternate slug to the Header
   const [pageTheme, setPageTheme] = useState({ // To share the theme to the Header
     dark: false,
     reverse: false,
@@ -28,8 +28,8 @@ export default function PageThemeProvider({ children }) {
       value={{
         pageTheme,
         setPageTheme,
-        alternateSlug,
-        setAlternateSlug
+        isFallbackLang,
+        setIsFallbackLang
       }}
     >
       {children}

@@ -2,7 +2,6 @@ import { API_ROUTES } from "../app/routes"
 
 export const getItemSet = async (lang, type) => {
 
-
   const response = await fetch(API_ROUTES.type_route(lang, type));
 
   if (!response.ok) {
@@ -41,10 +40,5 @@ export const sendForm = async (email, message) => {
       message: message,
     }),
   });
-
-  if (!response.ok) {
-    const error = await response.text();
-    console.log("Django error:", error);
-    throw new Error(error);
-  }
+  
 };

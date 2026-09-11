@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { usePageTheme } from "../components/themes/PageThemeContext";
 import DefaultLayout from "../components/layout/DefaultLayout/DefaultLayout";
@@ -9,14 +9,13 @@ import { getItem  } from "../api/contentApi";
 
 
 import { contentConfig } from "../config/contentConfig";
-import { useRouteError } from "react-router-dom";
 
 export default function SingleContent() {
 
   const { lang, type, slug } = useParams();
   const [item, setItem] = useState([]);
   const config = contentConfig[type];
-  const { setAlternateSlug } = usePageTheme();
+  const { setIsFallbackLang } = usePageTheme();
 
   useEffect(() => {
 
@@ -30,11 +29,13 @@ export default function SingleContent() {
 
   }, [type, slug]);
 
-  useEffect(() => {
-    if (item?.translation?.lang_metadata?.alternateSlug) {
-      setAlternateSlug(item.translation.lang_metadata.alternateSlug);
+  useEffect(() => { // Set the fallback language if the translation language is not in the list of available languages
+    console.log(item?.translation?.language, item?.languages);
+    console.log(lang);
+    if (item?.languages && item?.languages.length === 1) {
+      setIsFallbackLang(true);
     }
-  }, [item, setAlternateSlug]);
+  }, [item, setIsFallbackLang]);
 
   if (!item?.translation) {
     return null;

@@ -9,7 +9,7 @@ import { ROUTES } from "../../../app/routes"
 import "./Header.css"
 
 function Header({ crossHeader }){
-    const { pageTheme, setAlternateSlug } = usePageTheme();
+    const { pageTheme, setIsFallbackLang } = usePageTheme();
     const { lang, type, slug } = useParams();
     const navigate = useNavigate();
 
@@ -20,26 +20,26 @@ function Header({ crossHeader }){
             "--text-color": pageTheme.dark ? "white" : "#1a1a1a",
             "--is-item-page": slug !== undefined ? "flex" : "none"
         }}>
-            {!crossHeader &&
+            
+            {!crossHeader && /*Classic navbar if we are not on an article (crossHeader)*/
                 <>
-                    <div className="header-left">
+                    <div className="header-left" > 
                         <Navbar />
                     </div>
                 </>
             }
 
-            <div className="header-left-small">
-                <SideMenu boolCross={!!crossHeader} />
+            <div className="header-left-small" /*Side Menu if the window is small (see .css)*/>
+                <SideMenu />
             </div>
             
-
-            <div className="header-right">
+            <div className="header-right" /*Right part of the header (includes language and/or cross buttons)*/>
                 <LanguageButton className="lang-button"/>
-                {crossHeader &&
+                {crossHeader && /*If cross header includes cross button*/
                     <button className="cross-button" onClick={
                         () => {
                             navigate(ROUTES.type_route(lang, type));
-                            setAlternateSlug(null)}}>
+                            setIsFallbackLang(false)}}>
                         ✕
                     </button>
                 }

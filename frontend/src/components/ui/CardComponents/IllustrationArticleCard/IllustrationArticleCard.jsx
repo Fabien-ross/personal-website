@@ -12,7 +12,6 @@ export default function IllustrationArticleCard({ article }) {
     <NavLink
       className="illustr-card"
       to={ROUTES.item_route(lang, article.type, article.translation.slug)}
-      onClick={() => setIsOpen(false)}
     >
       <img
         className={article.media}

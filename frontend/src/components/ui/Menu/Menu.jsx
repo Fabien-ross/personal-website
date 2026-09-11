@@ -6,7 +6,7 @@ import { LINKS } from "../../../app/routes"
 
 import "./Menu.css";
 
-export default function Menu({ className = "" }) {
+export default function Menu({ className = "", onNavigate }) {
   const { t } = useTranslation();
   const { lang } = useParams();
 
@@ -18,7 +18,7 @@ export default function Menu({ className = "" }) {
           <NavLink
             key={key}
             to={path(lang)}
-            onClick={() => setIsOpen(false)}
+            onClick={onNavigate}
           >
             {t(`navbar.${key}`)}
           </NavLink>

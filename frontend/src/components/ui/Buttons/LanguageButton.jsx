@@ -9,21 +9,20 @@ import "./LanguageButton.css";
 function LanguageButton() {
   const { i18n } = useTranslation();
   const { lang, slug } = useParams();
-  const navigate = useNavigate();
   const location = useLocation();
-  const { alternateSlug } = usePageTheme();
+  const { isFallbackLang } = usePageTheme();
 
   const switchLanguage = () => {
     const newLanguage = lang === "fr" ? "en" : "fr";
 
     let newPath = location.pathname;
 
-    if (slug && alternateSlug) {
-      newPath = newPath.replace(
-        `/${slug}`,
-        `/${alternateSlug}`
-      );
-    }
+    // if (slug && isFallbackLang) {
+    //   newPath = newPath.replace(
+    //     `/${slug}`,
+    //     `/${isFallbackLang}`
+    //   );
+    // }
 
     newPath = newPath.replace(
       `/${lang}`,
@@ -34,9 +33,11 @@ function LanguageButton() {
     window.location.href = newPath;
   };
 
+  console.log(slug, isFallbackLang);
+
   return (
     <>
-     {!(slug && !alternateSlug) && (
+     {!(slug && isFallbackLang) && (
       < button className="language-button" onClick={switchLanguage}>
         <span className={`fi ${lang === "fr" ? "fi-gb" : "fi-fr"}`} />
       </button>
