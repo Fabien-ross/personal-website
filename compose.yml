@@ -7,7 +7,9 @@ services:
       target: development
     volumes:
       # bind mount enabling modifications on the host
-      - .:/project	
+      - ./backend:/app 
+      # to have the full project on the devcontainer
+      - .:/project 
     ports:
       - 8000:8000
     environment:

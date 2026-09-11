@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path
 from rest_framework import routers
 
 from . import views
@@ -8,7 +8,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path(
         "contact/",
-        views.ContactViewSet.as_view({"post": "create"}),
+        views.ContactView.as_view(),
     ),
     path(
         "docs/<str:language>/<str:type>/",

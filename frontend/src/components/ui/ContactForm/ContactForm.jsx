@@ -16,11 +16,11 @@ function ContactForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    setEmail("");
-    setMessage("");
-
     try {    
-      sendForm(email, message)
+      await sendForm(email, message)
+
+      setEmail("");
+      setMessage("");
     } catch (error) {
       console.error(error);
     }

@@ -2,6 +2,11 @@ from rest_framework import viewsets
 from .models import Document, Contact
 from .serializers import DocumentSerializer, ContactSerializer
 from rest_framework.permissions import AllowAny
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 
 class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
@@ -23,9 +28,15 @@ class DocumentViewSet(viewsets.ModelViewSet):
         )
 
 
-class ContactViewSet(viewsets.ModelViewSet):
+#@method_decorator(csrf_exempt, name="dispatch")
+class ContactView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = []
-    queryset = Contact.objects.all()
-    serializer_class = ContactSerializer
-    
+
+    def post(self, request):
+        print("CONTACT VIEW APPELÉE")
+        serializer = ContactSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response(serializer.data, status=201)

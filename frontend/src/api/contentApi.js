@@ -42,9 +42,9 @@ export const sendForm = async (email, message) => {
     }),
   });
 
-  const data = await response.json();
-
   if (!response.ok) {
-    throw new Error("Error sending message.");
+    const error = await response.text();
+    console.log("Django error:", error);
+    throw new Error(error);
   }
 };
