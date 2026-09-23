@@ -1,6 +1,6 @@
 # A Personal Website Built with React and Django, Containerized with Docker
 
-A reusable personal website template built with **React** and **Django**, fully containerized with **Docker**.
+A reusable personal website template built with **React** and **Django**, fully containerized with **Docker**. The website built here is available [here](https://fabienrosset.com/en/about)
 
 The project is designed to display **projects, writings, illustrations, and other personal content**. Its structure is intentionally modular and easy to customize for your own website.
 
