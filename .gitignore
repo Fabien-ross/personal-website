@@ -87,7 +87,7 @@ frontend/.prettierrc
 *.sw?
 
 # dev
-.devcontainer
+.devcontainer/devcontainer-lock.json
 changes.md
 
 # Backup databases

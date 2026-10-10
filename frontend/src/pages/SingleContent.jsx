@@ -30,8 +30,6 @@ export default function SingleContent() {
   }, [type, slug]);
 
   useEffect(() => { // Set the fallback language if the translation language is not in the list of available languages
-    console.log(item?.translation?.language, item?.languages);
-    console.log(lang);
     if (item?.languages && item?.languages.length === 1) {
       setIsFallbackLang(true);
     }
